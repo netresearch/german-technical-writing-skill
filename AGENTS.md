@@ -1,6 +1,6 @@
 # German Technical Writing Skill
 
-Natural German technical register for Jira comments, internal German docs, release notes, and team-chat to German-speaking colleagues. Catches literal English→German anglicisms and enforces the canonical technical lexicon.
+Natural German technical register for Jira comments, internal German docs, and team-chat to German-speaking colleagues. Catches literal English→German anglicisms and enforces the canonical technical lexicon.
 
 ## Repo Structure
 
@@ -12,7 +12,7 @@ Natural German technical register for Jira comments, internal German docs, relea
 │   │   ├── anti-patterns.md                # ~60 false-friends catalogue
 │   │   ├── lexicon.md                      # Technical term lexicon with gender
 │   │   ├── register.md                     # Tense/voice/person, artifact conventions
-│   │   └── examples.md                     # 7 paired bad-vs-good cases
+│   │   └── examples.md                     # 6 paired bad-vs-good cases
 │   └── evals/evals.json                    # 15 trigger-eval queries with assertions
 ├── .github/workflows/                      # CI: lint, security, release, eval-validate, harness-verify, auto-merge-deps
 ├── composer.json                           # type: ai-agent-skill
@@ -22,9 +22,9 @@ Natural German technical register for Jira comments, internal German docs, relea
 
 ## Scope
 
-Skill triggers for German prose ≥ 1 sentence in German-audience artifacts: Jira tickets and comments, internal German wiki/spec/RFC pages, release notes for German audiences, team-chat (Slack/Matrix/Teams) to German-speaking colleagues.
+Skill triggers for German prose ≥ 1 sentence in German-audience artifacts: Jira tickets and comments, internal German wiki/spec/RFC pages, team-chat (Slack/Matrix/Teams) to German-speaking colleagues.
 
-**Out of scope:** commit messages and MR/PR descriptions are written in English at Netresearch and most agencies delivering customer projects, regardless of the team's native language.
+**Out of scope:** commit messages, MR/PR descriptions, and release notes are all written in English at Netresearch and most agencies delivering customer projects, regardless of the team's native language.
 
 ## Extending
 

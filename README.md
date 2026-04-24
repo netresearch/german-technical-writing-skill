@@ -1,6 +1,6 @@
 # German Technical Writing Skill
 
-Natural German technical register for Jira comments and descriptions, internal German-language wiki/spec pages, release notes for German-speaking audiences, and team-chat messages to German-speaking colleagues.
+Natural German technical register for Jira comments and descriptions, internal German-language wiki/spec pages, and team-chat messages to German-speaking colleagues.
 
 Catches literal English→German anglicisms (`brechen`, `gefangen`, `returnen`, `triggern`, `failen`) and substitutes the canonical technical lexicon (`werfen`, `abfangen`, `zurückgeben`, `auslösen`, `fehlschlagen`) while accepting ecosystem-standard Denglisch loanwords (`der Commit`, `die Pipeline`, `die Exception`).
 
@@ -21,8 +21,8 @@ This is an **Agent Skill** following the [open standard](https://agentskills.io)
 - **Anti-pattern detection**: ~60 false-friends catalogued — `brechen`, `gefangen`, `returnen`, `failen`, `triggern`, `hitten`, plus calqued idioms (*am Ende des Tages*, *Low-hanging Fruit*) and pseudo-anglicisms (`Handy`, `Beamer`)
 - **Technical lexicon**: preferred German forms with gender for Exceptions, Tests, Git, CI/CD, HTTP, Frontend, Data, and Architecture domains
 - **Register enforcement**: Präsens-Indikativ default, impersonal voice, no first-person in artifacts, sentence-length and compound-noun rules, ß/ä/ö/ü orthography
-- **Artifact-specific conventions**: Jira ticket descriptions, Jira comments, release notes
-- **Worked examples**: 7 paired bad-vs-good cases with annotations
+- **Artifact-specific conventions**: Jira ticket descriptions, Jira comments, internal German wiki/spec pages
+- **Worked examples**: 6 paired bad-vs-good cases with annotations
 
 ## Installation
 
@@ -64,16 +64,16 @@ Requires [netresearch/composer-agent-skill-plugin](https://github.com/netresearc
 
 ## Usage
 
-The skill triggers automatically when composing German prose longer than one sentence for a German-audience artifact — Jira tickets and comments, internal German wiki/spec pages, release notes for German audiences, or team-chat messages to German-speaking colleagues.
+The skill triggers automatically when composing German prose longer than one sentence for a German-audience artifact — Jira tickets and comments, internal German wiki/spec pages, or team-chat messages to German-speaking colleagues.
 
 Example queries:
 
 - *"schreib bitte einen Jira-Kommentar auf OROSPD-692: der cart-merge-on-login Test failt weil ..."*
 - *"HMKG-2202 ticket beschreibung muss neu geschrieben werden — problem/ziel format auf deutsch"*
-- *"release notes eintrag auf deutsch für das interne changelog schreiben"*
 - *"kurze Slack-Ankündigung ans HMKG team auf deutsch: Pipeline CI-383 ist grün"*
+- *"drei-satz blurb auf deutsch fürs internal-wiki über das MeyerBaselineBundle"*
 
-The skill does **not** trigger for commit messages, MR/PR descriptions (English at Netresearch and most agencies delivering customer projects), conversational chat replies, single-word acknowledgements, or English artifacts that happen to contain German identifiers.
+The skill does **not** trigger for commit messages, MR/PR descriptions, release notes (all English at Netresearch and most agencies delivering customer projects), conversational chat replies, single-word acknowledgements, or English artifacts that happen to contain German identifiers.
 
 ## Structure
 
@@ -84,7 +84,7 @@ skills/german-technical-writing/
 │   ├── anti-patterns.md  # ~60 false-friends catalogue with explanations
 │   ├── lexicon.md        # Technical term lexicon with gender
 │   ├── register.md       # Tense/voice/person, artifact conventions
-│   └── examples.md       # 7 paired real-world cases with annotations
+│   └── examples.md       # 6 paired real-world cases with annotations
 └── evals/
     └── evals.json        # 15 trigger-eval queries with assertions
 ```

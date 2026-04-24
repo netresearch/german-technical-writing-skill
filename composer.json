@@ -1,6 +1,6 @@
 {
     "name": "netresearch/german-technical-writing-skill",
-    "description": "Netresearch AI skill for natural German technical register in Jira comments and descriptions, internal German-language documentation, release notes, and team-chat messages",
+    "description": "Netresearch AI skill for natural German technical register in Jira comments and descriptions, internal German-language documentation, and team-chat messages",
     "type": "ai-agent-skill",
     "license": "(MIT AND CC-BY-SA-4.0)",
     "authors": [

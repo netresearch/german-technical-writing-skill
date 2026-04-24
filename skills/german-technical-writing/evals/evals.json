@@ -33,16 +33,17 @@
     },
     {
       "id": 3,
-      "prompt": "release notes eintrag auf deutsch schreiben für den neuen cart-merge-on-login fix, ein bullet, für das interne changelog",
-      "expected_output": "Single bullet German release-note entry, noun-phrase header, no first-person.",
+      "prompt": "status-update jira-kommentar auf deutsch für OROSPD-692: die Migration ist durch, Cache läuft wieder, keine weiteren Fehler in der Pipeline. kurz und sachlich bitte",
+      "expected_output": "Concise German Jira status-update comment, impersonal voice, canonical verbs, h3. heading optional.",
       "expectations": [
-        "Single bullet",
-        "Noun-phrase or imperative header",
-        "No first-person"
+        "Uses canonical German verbs (läuft, ist durch, aufgetreten), not anglicisms",
+        "Impersonal voice — no first-person",
+        "Short and factual — under 5 sentences",
+        "Mentions migration, cache, pipeline status"
       ],
       "assertions": [
-        {"type": "content", "pattern": "^\\* "},
-        {"type": "must_not", "pattern": "(?i)\\bWir haben\\b"}
+        {"type": "content", "pattern": "(?i)(migration|pipeline|cache)"},
+        {"type": "must_not", "pattern": "(?i)\\b(wir haben|ich habe|failt|gefangen|gefixt)\\b"}
       ]
     },
     {

@@ -1,8 +1,8 @@
 # Register — Tense, Voice, Person, and Artifact-Specific Conventions
 
-Register is the biggest single driver of whether German technical prose reads as native or translated. Use this reference when composing longer artifacts: Jira descriptions and comments, internal German-language wiki pages, release notes for a German audience, RFC/spec documents, and team-chat messages to German-speaking colleagues.
+Register is the biggest single driver of whether German technical prose reads as native or translated. Use this reference when composing longer artifacts: Jira descriptions and comments, internal German-language wiki pages, RFC/spec documents, and team-chat messages to German-speaking colleagues.
 
-**Not in scope:** commit messages and MR/PR descriptions — at Netresearch and most agencies delivering customer projects, those are written in English by team convention regardless of the team's native language.
+**Not in scope:** commit messages, MR/PR descriptions, and release notes — at Netresearch and most agencies delivering customer projects, those are written in English by team convention regardless of the team's native language.
 
 ## Tense
 
@@ -97,16 +97,16 @@ Style:
 - Code elements in `{{monospace}}`
 - Closing: facts + next action, no hedging ("Hoffen wir mal", "Scheint zu funktionieren" — cut)
 
-### Commit messages and MR/PR descriptions — not in scope
+### Commit messages, MR/PR descriptions, and release notes — not in scope
 
-At Netresearch and most agencies delivering customer projects, commit messages and MR/PR descriptions are written in English by team convention regardless of the team's native language. Do **not** apply this skill's guidance to those artifacts — if a German commit or MR description crosses your desk, flag it as off-convention rather than polish the German.
+At Netresearch and most agencies delivering customer projects, commit messages, MR/PR descriptions, and release notes are all written in English by team convention regardless of the team's native language. Do **not** apply this skill's guidance to those artifacts — if a German version crosses your desk, flag it as off-convention rather than polish the German.
 
-### Release Notes
+### Internal German Wiki / Spec Pages
 
-- Bullet list, one line per user-visible change
-- Start each bullet with a noun or verb phrase, not "Wir haben..."
-- Group by: Features / Fixes / Breaking Changes / Deprecations
-- No marketing language, no hedging
+- Sie-Form for customer-facing docs; Du-Form for internal team wiki (HMKG convention)
+- Impersonal voice in specification sections; direct voice acceptable in how-to sections
+- Heading hierarchy: `#` for page title, `##` for major sections, `###` for subsections
+- Technical terms in the established lexicon — same rules as Jira prose
 
 ## Sentence Length
 

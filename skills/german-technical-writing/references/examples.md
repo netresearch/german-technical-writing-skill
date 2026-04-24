@@ -98,29 +98,7 @@ Real paired cases from past Jira tickets and team-chat announcements. Each pair 
 - Three short sentences instead of one rambling one
 - Impersonal *"muss ergänzt werden"* instead of first-person *"Wir müssen"*
 
-## Case 5 — Release note bullet
-
-**Bad:**
-
-> * Wir haben die Pipeline gefixed, sodass Tests auch bei flaky Conditions green bleiben.
-
-**Problems:**
-
-- First person in release notes — always wrong
-- *gefixed*, *flaky Conditions*, *green* — Denglisch salad
-
-**Good:**
-
-> * Pipeline stabilisiert: Tests bleiben auch bei instabilen Bedingungen grün.
-
-**Why:**
-
-- Noun-phrase header (*"Pipeline stabilisiert"*) is natural release-note form
-- Colon-then-explanation structure is German release-note convention
-- *grün* is accepted for CI status — keeps the domain language
-- *instabile Bedingungen* is the clean technical rendering of "flaky"
-
-## Case 6 — Status update comment
+## Case 5 — Status update comment
 
 **Bad:**
 
@@ -144,7 +122,7 @@ Real paired cases from past Jira tickets and team-chat announcements. Each pair 
 - Two sentences: *diagnosis*, then *fix*. Scannable.
 - Italic *"Status-Update:"* as a lead-in works in Jira wiki markup
 
-## Case 7 — Deployment announcement
+## Case 6 — Deployment announcement
 
 **Bad:**
 
