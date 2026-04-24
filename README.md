@@ -1,10 +1,8 @@
 # German Technical Writing Skill
 
-Natural German technical register for Jira comments and descriptions, internal German-language wiki/spec pages, release notes for German-speaking audiences, and team-chat messages (Slack, Matrix, Teams) to German-speaking colleagues.
+Natural German technical register for Jira comments and descriptions, internal German-language wiki/spec pages, release notes for German-speaking audiences, and team-chat messages to German-speaking colleagues.
 
 Catches literal English→German anglicisms (`brechen`, `gefangen`, `returnen`, `triggern`, `failen`) and substitutes the canonical technical lexicon (`werfen`, `abfangen`, `zurückgeben`, `auslösen`, `fehlschlagen`) while accepting ecosystem-standard Denglisch loanwords (`der Commit`, `die Pipeline`, `die Exception`).
-
-> **Scope:** this skill targets German-audience artifacts. At Netresearch and most agencies that deliver projects to customers, commit messages and MR/PR descriptions are written in English by team convention regardless of the native language of authors and reviewers — the skill does **not** apply to those.
 
 ## 🔌 Compatibility
 
@@ -20,11 +18,11 @@ This is an **Agent Skill** following the [open standard](https://agentskills.io)
 
 ## Features
 
-- **Anti-pattern detection**: ~60 literal-translation false friends catalogued — `brechen` (break), `gefangen` (caught), `returnen` (return), `failen` (fail), `triggern` (trigger), `hitten` (hit), plus calqued idioms ("in die Falle zurück", "am Ende des Tages", "auf derselben Seite")
-- **Technical lexicon**: preferred German forms for Exceptions, Tests, Builds, Git, CI/CD, HTTP, Frontend, Data, Architecture — with gender, compound-noun rules, and `der/die/das` for ambiguous loanwords
-- **Register enforcement**: Präsens-Indikativ default, impersonal voice, no first-person in artifacts, sentence-length limits, compound-noun stacking rules, ß/ä/ö/ü orthography
-- **Artifact-specific conventions**: dedicated guidance for Jira descriptions, Jira comments, MR descriptions, commit messages, release notes
-- **Worked examples**: 8 paired bad-vs-good cases from real Jira history with annotations
+- **Anti-pattern detection**: ~60 false-friends catalogued — `brechen`, `gefangen`, `returnen`, `failen`, `triggern`, `hitten`, plus calqued idioms (*am Ende des Tages*, *Low-hanging Fruit*) and pseudo-anglicisms (`Handy`, `Beamer`)
+- **Technical lexicon**: preferred German forms with gender for Exceptions, Tests, Git, CI/CD, HTTP, Frontend, Data, and Architecture domains
+- **Register enforcement**: Präsens-Indikativ default, impersonal voice, no first-person in artifacts, sentence-length and compound-noun rules, ß/ä/ö/ü orthography
+- **Artifact-specific conventions**: Jira ticket descriptions, Jira comments, release notes
+- **Worked examples**: 7 paired bad-vs-good cases with annotations
 
 ## Installation
 
@@ -66,66 +64,30 @@ Requires [netresearch/composer-agent-skill-plugin](https://github.com/netresearc
 
 ## Usage
 
-This skill is automatically triggered when composing German-language prose longer than one sentence for a German-audience artifact:
+The skill triggers automatically when composing German prose longer than one sentence for a German-audience artifact — Jira tickets and comments, internal German wiki/spec pages, release notes for German audiences, or team-chat messages to German-speaking colleagues.
 
-- Writing a Jira comment, description, or ticket summary in German
-- Writing or updating an internal German-language wiki page, spec, or RFC
-- Writing release notes or changelog entries aimed at a German-speaking audience
-- Writing Matrix / Slack / Teams messages to German-speaking colleagues
-- Producing any other German artifact that German-speaking colleagues or stakeholders will read
+Example queries:
 
-The skill is **not** triggered for:
+- *"schreib bitte einen Jira-Kommentar auf OROSPD-692: der cart-merge-on-login Test failt weil ..."*
+- *"HMKG-2202 ticket beschreibung muss neu geschrieben werden — problem/ziel format auf deutsch"*
+- *"release notes eintrag auf deutsch für das interne changelog schreiben"*
+- *"kurze Slack-Ankündigung ans HMKG team auf deutsch: Pipeline CI-383 ist grün"*
 
-- Commit messages or MR/PR descriptions (English by team convention at Netresearch and similar agencies, regardless of team language)
-- Conversational German chat replies to the user
-- Internal reasoning or thinking
-- Single-line acknowledgements (`"Ok"`, `"Danke"`, `"Fertig"`)
-- English artifacts that happen to contain German names or identifiers
+The skill does **not** trigger for commit messages, MR/PR descriptions (English at Netresearch and most agencies delivering customer projects), conversational chat replies, single-word acknowledgements, or English artifacts that happen to contain German identifiers.
 
-### Example queries
-
-- "schreib bitte einen Jira-Kommentar auf OROSPD-692: der cart-merge-on-login Test failt weil ..."
-- "HMKG-2202 ticket beschreibung muss neu geschrieben werden — problem/ziel format auf deutsch"
-- "release notes eintrag auf deutsch für das interne changelog schreiben"
-- "kurze Slack-Ankündigung ans HMKG team auf deutsch: Pipeline CI-383 ist grün, QA kann starten"
-- "drei-satz blurb auf deutsch fürs internal-wiki über das MeyerBaselineBundle"
-
-### What the skill does
-
-1. Compose directly in German — don't translate from an English mental draft
-2. Self-review each sentence against the anti-pattern list
-3. Apply the technical lexicon (canonical verbs, preferred gender for loanwords)
-4. Match the register to the artifact type (tense, voice, person)
-5. If two phrasings seem plausible and the author can't decide, ask — don't guess
-
-## What's inside
+## Structure
 
 ```
 skills/german-technical-writing/
-├── SKILL.md              # Trigger description, process, quick-reference
+├── SKILL.md              # Trigger description, process, top-anti-pattern table
 ├── references/
 │   ├── anti-patterns.md  # ~60 false-friends catalogue with explanations
 │   ├── lexicon.md        # Technical term lexicon with gender
-│   └── register.md       # Tense/voice/person, artifact conventions
-└── examples/
-    └── bad-vs-good.md    # 8 paired real-world cases with annotations
+│   ├── register.md       # Tense/voice/person, artifact conventions
+│   └── examples.md       # 7 paired real-world cases with annotations
+└── evals/
+    └── evals.json        # 15 trigger-eval queries with assertions
 ```
-
-## External references
-
-The skill builds on these authoritative sources:
-
-- [Microsoft German Localization Style Guide](https://download.microsoft.com/download/e/f/9/ef9f6d8e-cd8b-420c-8696-afd98b4a367d/deu-deu-StyleGuide.pdf) — canonical source for tone, formality, and technical German conventions
-- [Microsoft Learn Schnellstart-Leitfaden (de-de)](https://learn.microsoft.com/de-de/contribute/content/style-quick-start) — Microsoft's own German technical-writing quick reference
-- [Weka: Technische Dokumentation Styleguides](https://www.weka.de/produktsicherheit/nutzen-oeffentlich-zugaenglicher-styleguides/) — overview of German technical-documentation style guides
-- [dictaJet: Grundlagen der Technischen Dokumentation — Styleguide](https://www.dictajet.de/styleguide/) — practical style-guide elements for German technical writing
-- [IT-Business: Anglizismen in der IT](https://www.it-business.de/anglizismen-in-der-it-a-167154/) — catalogue of anglicisms in German IT with native alternatives
-- Duden online — final arbiter for orthography and case/gender when no project convention exists
-
-## License
-
-- **Code** (`composer.json`, `plugin.json`, scripts): [MIT](LICENSE-MIT)
-- **Prose** (`SKILL.md`, references, examples, README): [CC-BY-SA-4.0](LICENSE-CC-BY-SA-4.0)
 
 ## Contributing
 
@@ -138,4 +100,9 @@ When proposing new anti-pattern entries or lexicon additions, please include:
 3. The preferred technical German form
 4. A brief explanation of **why** the literal form reads as anglicism
 
-See `skills/german-technical-writing/examples/bad-vs-good.md` for the style of explanation we expect.
+See `skills/german-technical-writing/references/examples.md` for the style of explanation we expect.
+
+## License
+
+- **Code** (`composer.json`, `plugin.json`, configs): [MIT](LICENSE-MIT)
+- **Prose** (`SKILL.md`, references, README): [CC-BY-SA-4.0](LICENSE-CC-BY-SA-4.0)

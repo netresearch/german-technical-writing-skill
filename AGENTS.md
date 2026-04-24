@@ -1,66 +1,37 @@
 # German Technical Writing Skill
 
-Natural German technical register for Jira comments and descriptions, internal German-language documentation, release notes, and team-chat messages to German-speaking colleagues.
+Natural German technical register for Jira comments, internal German docs, release notes, and team-chat to German-speaking colleagues. Catches literal English→German anglicisms and enforces the canonical technical lexicon.
 
 ## Repo Structure
 
 ```
-├── .claude-plugin/
-│   └── plugin.json                       # Plugin manifest (points at ./skills/german-technical-writing)
+├── .claude-plugin/plugin.json              # Plugin manifest
 ├── skills/german-technical-writing/
-│   ├── SKILL.md                          # Trigger description, process, quick-reference
+│   ├── SKILL.md                            # Trigger description, process, top-anti-patterns
 │   ├── references/
-│   │   ├── anti-patterns.md              # ~60 false-friends catalogue
-│   │   ├── lexicon.md                    # Technical term lexicon with gender
-│   │   └── register.md                   # Tense/voice/person, artifact conventions
-│   └── examples/
-│       └── bad-vs-good.md                # Paired real-world cases with annotations
-├── composer.json                         # Composer package manifest (type: ai-agent-skill)
-├── LICENSE-MIT                           # MIT license for code and config
-├── LICENSE-CC-BY-SA-4.0                  # CC-BY-SA-4.0 license for prose (SKILL.md, references, examples)
-└── README.md                             # Installation, usage, features
+│   │   ├── anti-patterns.md                # ~60 false-friends catalogue
+│   │   ├── lexicon.md                      # Technical term lexicon with gender
+│   │   ├── register.md                     # Tense/voice/person, artifact conventions
+│   │   └── examples.md                     # 7 paired bad-vs-good cases
+│   └── evals/evals.json                    # 15 trigger-eval queries with assertions
+├── .github/workflows/                      # CI: lint, security, release, eval-validate, harness-verify, auto-merge-deps
+├── composer.json                           # type: ai-agent-skill
+├── LICENSE-MIT, LICENSE-CC-BY-SA-4.0       # Dual license: code (MIT), prose (CC-BY-SA-4.0)
+└── README.md                               # Installation + features
 ```
 
-## What this skill does
+## Scope
 
-Detects and prevents literal English→German translation anglicisms in persistent team artifacts. Targets the **register** problem, not grammar — text produced by English-first composition is grammatically correct but uses false friends (`brechen`/`gefangen`/`returnen`) that a native technical writer would never choose.
+Skill triggers for German prose ≥ 1 sentence in German-audience artifacts: Jira tickets and comments, internal German wiki/spec/RFC pages, release notes for German audiences, team-chat (Slack/Matrix/Teams) to German-speaking colleagues.
 
-The skill enforces:
+**Out of scope:** commit messages and MR/PR descriptions are written in English at Netresearch and most agencies delivering customer projects, regardless of the team's native language.
 
-1. German-first composition (not phrase-by-phrase translation from English)
-2. The canonical German technical verb lexicon (`werfen`, `abfangen`, `zurückgeben`, `auslösen`, `fehlschlagen`)
-3. Present-indicative tense, impersonal voice, no first-person in artifacts
-4. Accepted ecosystem Denglisch (`der Commit`, `die Pipeline`, `die Exception`) while rejecting ad-hoc anglicisms (`brechen`, `gefangen`, `failen`)
+## Extending
 
-## When the skill triggers
-
-Skill fires for German prose longer than one sentence aimed at a German-speaking audience: Jira comments and descriptions, internal German-language wiki/spec pages, RFC documents, release notes for German audiences, and team-chat messages (Slack, Matrix, Teams) to German-speaking colleagues.
-
-Skill does **not** fire for: commit messages or MR/PR descriptions (English by team convention at Netresearch and most agencies delivering customer projects), conversational German chat replies, internal reasoning, single-word acknowledgements, English artifacts that merely contain German identifiers.
-
-## Extending the skill
-
-### Adding an anti-pattern
-
-Open `skills/german-technical-writing/references/anti-patterns.md` and add to the relevant section (Verbs — Exceptions, Tests, Data Flow, Git, Nouns, Sentence Structure, Pseudo-anglicisms). Every entry needs:
-
-- English concept
-- ❌ Literal-translation form
-- ✅ Preferred technical form
-- **Why** the literal form reads as anglicism (often a register mismatch or false friend)
-
-### Adding a lexicon entry
-
-Open `skills/german-technical-writing/references/lexicon.md` and add to the relevant domain section (Exceptions & Error Handling, Tests, Version Control, CI/CD, HTTP, Frontend, Data, Architecture). Every entry needs:
-
-- English term
-- Preferred German form (with article where noun)
-- Register tag (*accepted loanword*, *native German*, or *both*)
-- Notes on gender, pluralization, or usage gotchas
-
-### Adding a paired example
-
-Open `skills/german-technical-writing/examples/bad-vs-good.md` and add a new `## Case N` block with: bad text, explicit list of problems, rewritten good text, explanation of why the rewrite works. Drawn from real Jira/MR history preferred over synthetic examples.
+- **Anti-pattern entry** → `skills/german-technical-writing/references/anti-patterns.md`. Required: English concept, ❌ literal form, ✅ preferred form, **why** the literal reads as anglicism.
+- **Lexicon entry** → `skills/german-technical-writing/references/lexicon.md`. Required: English term, preferred German form (with article), register tag, gotchas.
+- **Worked example** → `skills/german-technical-writing/references/examples.md`. New `## Case N` block with bad text, problems list, rewritten good text, and explanation. Drawn from real Jira history preferred over synthetic.
+- **Eval query** → `skills/german-technical-writing/evals/evals.json`. Each entry needs ≥ 2 expectations and ≥ 2 assertions per the validator.
 
 ## Compatibility
 
@@ -68,5 +39,4 @@ Agent Skill format — works with Claude Code, Cursor, GitHub Copilot, and any [
 
 ## License
 
-- Code: [MIT](LICENSE-MIT)
-- Prose: [CC-BY-SA-4.0](LICENSE-CC-BY-SA-4.0)
+Code [MIT](LICENSE-MIT) · Prose [CC-BY-SA-4.0](LICENSE-CC-BY-SA-4.0)
