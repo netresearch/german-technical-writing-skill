@@ -1,0 +1,128 @@
+{
+  "skill_name": "german-technical-writing",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "schreib bitte einen Jira-Kommentar auf OROSPD-692: der cart-merge-on-login Test failt weil die Fixture keine CPL hat, muss noch wait-for-AJAX rein. MR ist !1102, pipeline grün. danke",
+      "expected_output": "Compose a German Jira comment that uses canonical technical verbs (schlägt fehl, fehlt, wirft) and impersonal voice. No anglicisms like 'failt' in the output.",
+      "expectations": [
+        "Uses 'schlägt fehl' or 'fällt durch' for the test failure (not 'failt')",
+        "Uses Jira wiki markup (h3., {{monospace}}, table syntax)",
+        "Impersonal voice — no first-person 'ich' or 'wir'",
+        "Includes link to MR !1102"
+      ],
+      "assertions": [
+        {"type": "content", "pattern": "(schlägt fehl|fällt durch)"},
+        {"type": "must_not", "pattern": "\\bfailt\\b"},
+        {"type": "must_not", "pattern": "\\bgefangen\\b"}
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "HMKG-2202 ticket beschreibung muss neu geschrieben werden — problem/ziel format auf deutsch, ein satz problem, 2-3 akzeptanzkriterien, out of scope nur das kit-feature. bitte jira wiki markup",
+      "expected_output": "German Jira ticket description in Problem/Ziel/Akzeptanzkriterien/Out of Scope structure with wiki markup, impersonal voice.",
+      "expectations": [
+        "Uses h2. headings: Problem, Ziel, Akzeptanzkriterien, Out of Scope",
+        "Impersonal voice throughout",
+        "Bullet list for Akzeptanzkriterien"
+      ],
+      "assertions": [
+        {"type": "content", "pattern": "h2\\. (Problem|Ziel|Akzeptanzkriterien)"},
+        {"type": "must_not", "pattern": "\\bwir haben\\b|\\bich habe\\b"}
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "release notes eintrag auf deutsch schreiben für den neuen cart-merge-on-login fix, ein bullet, für das interne changelog",
+      "expected_output": "Single bullet German release-note entry, noun-phrase header, no first-person.",
+      "expectations": [
+        "Single bullet",
+        "Noun-phrase or imperative header",
+        "No first-person"
+      ],
+      "assertions": [
+        {"type": "content", "pattern": "^\\* "},
+        {"type": "must_not", "pattern": "\\bWir haben\\b"}
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Bitte schreib eine kurze Slack-Ankündigung ans HMKG team auf deutsch: Pipeline CI-383 ist grün, QA kann starten, MR !1089 review willkommen",
+      "expected_output": "Short German Slack announcement using canonical idiom (Hinweis, not 'Heads up').",
+      "expectations": [
+        "Uses 'Hinweis' or similar German lead-in (not 'Heads up')",
+        "Mentions pipeline grün, QA, MR !1089"
+      ],
+      "assertions": [
+        {"type": "must_not", "pattern": "(?i)heads up"}
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "translate this to german for a jira comment: 'The test fails because the fixture is empty. This happens when PricingStorageIsolator runs before the Combined* rebuild finishes. Fix: wait for idle before asserting.'",
+      "expected_output": "Natural German technical prose with 'schlägt fehl', 'leer', no anglicisms.",
+      "expectations": [
+        "Uses 'schlägt fehl' (not 'failt' or 'gefailt')",
+        "Uses 'leer' (not 'empty')",
+        "Impersonal voice"
+      ],
+      "assertions": [
+        {"type": "content", "pattern": "(schlägt fehl|fällt durch)"},
+        {"type": "content", "pattern": "\\bleer\\b"},
+        {"type": "must_not", "pattern": "\\bempty\\b|\\bgefailt\\b|\\bgefangen\\b"}
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "whats the status of HMKG-2202? is it ready for QA?",
+      "expected_output": "English status response. Should NOT invoke german-technical-writing skill (English query, no German artifact requested).",
+      "expectations": [
+        "Response is in English",
+        "No German prose composition"
+      ],
+      "assertions": [
+        {"type": "must_not", "pattern": "(?i)\\b(schlägt|werfen|abfangen|zurückgeben|auslösen)\\b"}
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Danke",
+      "expected_output": "Brief acknowledgement reply. Should NOT invoke german-technical-writing skill (single-word German chat reply).",
+      "expectations": [
+        "Brief reply, no skill invocation"
+      ],
+      "assertions": []
+    },
+    {
+      "id": 8,
+      "prompt": "translate this jira comment from german to english so i can forward it to Oro corporate: 'Der Test schlägt fehl weil die Fixture leer ist, wir fixen das in MR !1102'",
+      "expected_output": "English translation. Should NOT invoke german-technical-writing skill (German→English direction, not German composition).",
+      "expectations": [
+        "Output is English",
+        "Translates the German faithfully"
+      ],
+      "assertions": [
+        {"type": "content", "pattern": "(?i)(test fails|fixture is empty|MR !1102)"}
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "explain to me what Konjunktiv II is in german grammar and when native speakers use it vs Indikativ",
+      "expected_output": "Grammar explanation in English. Should NOT invoke german-technical-writing skill (abstract grammar question, not artifact composition).",
+      "expectations": [
+        "Explanation focuses on grammar mechanics",
+        "Not a German artifact composition"
+      ],
+      "assertions": []
+    },
+    {
+      "id": 10,
+      "prompt": "rename the variable `user` to `benutzer` in src/Meyer/ThemeBundle/Controller/AuthController.php and update the tests",
+      "expected_output": "Code edit. Should NOT invoke german-technical-writing skill (code task, German identifier name doesn't trigger).",
+      "expectations": [
+        "Code editing, not prose composition"
+      ],
+      "assertions": []
+    }
+  ]
+}

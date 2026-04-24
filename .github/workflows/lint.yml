@@ -1,0 +1,14 @@
+name: Lint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Skill Validation
+    uses: netresearch/skill-repo-skill/.github/workflows/validate.yml@main

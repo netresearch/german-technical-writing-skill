@@ -1,0 +1,12 @@
+name: Harness Verification
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  harness-verify:
+    uses: netresearch/skill-repo-skill/.github/workflows/harness-verify.yml@main
