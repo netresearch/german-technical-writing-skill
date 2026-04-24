@@ -1,0 +1,14 @@
+{
+  "name": "german-technical-writing",
+  "version": "1.0.0",
+  "description": "Natural German technical register for Jira, MR descriptions, commit messages, release notes, and team-facing documentation",
+  "repository": "https://github.com/netresearch/german-technical-writing-skill",
+  "license": "(MIT AND CC-BY-SA-4.0)",
+  "author": {
+    "name": "Netresearch DTT GmbH",
+    "url": "https://www.netresearch.de"
+  },
+  "skills": [
+    "./skills/german-technical-writing"
+  ]
+}
