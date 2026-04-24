@@ -47,7 +47,7 @@ Register is the biggest single driver of whether German technical prose reads as
 
 ## Person
 
-**No first person in artifact text.** Ever. "Ich", "wir", "uns" belong in chat, review comments, and 1:1 communication — not in Jira descriptions, wiki pages, or release notes.
+**No first person in artifact text.** Ever. "Ich", "wir", "uns" belong in informal chat replies and 1:1 communication — not in Jira descriptions or internal wiki/spec pages.
 
 - ❌ "Wir haben den Bug gefixt."
 - ✅ "Der Bug ist behoben." (Perfekt-Passiv)
