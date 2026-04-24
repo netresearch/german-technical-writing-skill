@@ -28,7 +28,7 @@
       ],
       "assertions": [
         {"type": "content", "pattern": "h2\\. (Problem|Ziel|Akzeptanzkriterien)"},
-        {"type": "must_not", "pattern": "\\bwir haben\\b|\\bich habe\\b"}
+        {"type": "must_not", "pattern": "(?i)\\b(wir haben|ich habe)\\b"}
       ]
     },
     {
@@ -42,7 +42,7 @@
       ],
       "assertions": [
         {"type": "content", "pattern": "^\\* "},
-        {"type": "must_not", "pattern": "\\bWir haben\\b"}
+        {"type": "must_not", "pattern": "(?i)\\bWir haben\\b"}
       ]
     },
     {
@@ -54,7 +54,8 @@
         "Mentions pipeline grün, QA, MR !1089"
       ],
       "assertions": [
-        {"type": "must_not", "pattern": "(?i)heads up"}
+        {"type": "must_not", "pattern": "(?i)\\bheads up\\b"},
+        {"type": "content", "pattern": "(?i)(QA|MR !1089|grün)"}
       ]
     },
     {
@@ -69,7 +70,7 @@
       "assertions": [
         {"type": "content", "pattern": "(schlägt fehl|fällt durch)"},
         {"type": "content", "pattern": "\\bleer\\b"},
-        {"type": "must_not", "pattern": "\\bempty\\b|\\bgefailt\\b|\\bgefangen\\b"}
+        {"type": "must_not", "pattern": "(?i)\\b(empty|gefailt|gefangen)\\b"}
       ]
     },
     {
@@ -78,10 +79,12 @@
       "expected_output": "English status response. Should NOT invoke german-technical-writing skill (English query, no German artifact requested).",
       "expectations": [
         "Response is in English",
-        "No German prose composition"
+        "No German prose composition output",
+        "Does not invoke german-technical-writing skill"
       ],
       "assertions": [
-        {"type": "must_not", "pattern": "(?i)\\b(schlägt|werfen|abfangen|zurückgeben|auslösen)\\b"}
+        {"type": "must_not", "pattern": "(?i)\\b(schlägt fehl|fällt durch|zurückgeben)\\b"},
+        {"type": "must_not", "pattern": "(?i)\\bwirft eine Exception\\b"}
       ]
     },
     {
@@ -89,20 +92,27 @@
       "prompt": "Danke",
       "expected_output": "Brief acknowledgement reply. Should NOT invoke german-technical-writing skill (single-word German chat reply).",
       "expectations": [
-        "Brief reply, no skill invocation"
+        "Brief reply (under 100 characters)",
+        "Does not invoke german-technical-writing skill",
+        "No multi-paragraph German prose"
       ],
-      "assertions": []
+      "assertions": [
+        {"type": "must_not", "pattern": "(?i)\\b(schlägt fehl|zurückgeben|abfangen|auslösen)\\b"},
+        {"type": "must_not", "pattern": "h[123]\\."}
+      ]
     },
     {
       "id": 8,
       "prompt": "translate this jira comment from german to english so i can forward it to Oro corporate: 'Der Test schlägt fehl weil die Fixture leer ist, wir fixen das in MR !1102'",
       "expected_output": "English translation. Should NOT invoke german-technical-writing skill (German→English direction, not German composition).",
       "expectations": [
-        "Output is English",
-        "Translates the German faithfully"
+        "Output is English (translation TO English)",
+        "Translates the German faithfully",
+        "Does not invoke german-technical-writing skill"
       ],
       "assertions": [
-        {"type": "content", "pattern": "(?i)(test fails|fixture is empty|MR !1102)"}
+        {"type": "content", "pattern": "(?i)(test fails|fixture is empty|MR !1102)"},
+        {"type": "must_not", "pattern": "(?i)\\b(schlägt fehl|zurückgeben|abfangen)\\b"}
       ]
     },
     {
@@ -111,18 +121,101 @@
       "expected_output": "Grammar explanation in English. Should NOT invoke german-technical-writing skill (abstract grammar question, not artifact composition).",
       "expectations": [
         "Explanation focuses on grammar mechanics",
-        "Not a German artifact composition"
+        "Output is in English",
+        "Does not invoke german-technical-writing skill (no artifact being composed)"
       ],
-      "assertions": []
+      "assertions": [
+        {"type": "content", "pattern": "(?i)(konjunktiv|subjunctive|hypothetic)"},
+        {"type": "must_not", "pattern": "h[123]\\. (Problem|Ziel|Akzeptanzkriterien)"}
+      ]
     },
     {
       "id": 10,
       "prompt": "rename the variable `user` to `benutzer` in src/Meyer/ThemeBundle/Controller/AuthController.php and update the tests",
       "expected_output": "Code edit. Should NOT invoke german-technical-writing skill (code task, German identifier name doesn't trigger).",
       "expectations": [
-        "Code editing, not prose composition"
+        "Performs code edit (no German prose composition)",
+        "Updates the variable name and references",
+        "Does not invoke german-technical-writing skill"
       ],
-      "assertions": []
+      "assertions": [
+        {"type": "must_not", "pattern": "(?i)\\b(schlägt fehl|zurückgeben|abfangen|auslösen)\\b"},
+        {"type": "must_not", "pattern": "h[123]\\. (Problem|Ziel)"}
+      ]
+    },
+    {
+      "id": 11,
+      "prompt": "wir brauchen eine Jira description auf deutsch für einen neuen Epic: Pflanzenbörse-Tax-Display überarbeiten weil die Kunden in der Gastansicht falsche Preise sehen, 2-3 akzeptanzkriterien, jira wiki markup",
+      "expected_output": "German Jira Epic description with Problem/Ziel/Akzeptanzkriterien sections, impersonal voice, wiki markup.",
+      "expectations": [
+        "Uses h2. headings (Problem, Ziel, Akzeptanzkriterien)",
+        "Impersonal voice — no first-person",
+        "2-3 Akzeptanzkriterien bullets",
+        "Mentions Pflanzenbörse, Tax-Display, Gastansicht"
+      ],
+      "assertions": [
+        {"type": "content", "pattern": "h2\\. (Problem|Ziel|Akzeptanzkriterien)"},
+        {"type": "content", "pattern": "(?i)(Pflanzenbörse|Gastansicht|Tax)"},
+        {"type": "must_not", "pattern": "(?i)\\b(wir haben|ich habe)\\b"}
+      ]
+    },
+    {
+      "id": 12,
+      "prompt": "paul hat mir einen code review in deutsch geschrieben und fragt warum wir keine unit tests für den provider haben. schreib bitte eine antwort auf deutsch die erklärt dass wir stattdessen einen regression test durch den decorator routen, und warum das sauberer ist",
+      "expected_output": "German reply explaining the decorator-routed regression test, using canonical verbs and impersonal voice.",
+      "expectations": [
+        "Reply is in German",
+        "Uses canonical verbs (schickt, abgefangen, erkannt) not anglicisms",
+        "Impersonal or third-person voice",
+        "Explains why decorator routing is cleaner"
+      ],
+      "assertions": [
+        {"type": "content", "pattern": "(?i)(decorator|regression)"},
+        {"type": "must_not", "pattern": "\\b(gefangen|gefailt|returnen|triggern)\\b"}
+      ]
+    },
+    {
+      "id": 13,
+      "prompt": "gib mir bitte einen drei-satz blurb auf deutsch für das internal-wiki über das MeyerBaselineBundle — was es macht, warum es existiert, wer es benutzt",
+      "expected_output": "Three-sentence German wiki blurb covering function, motivation, and audience. Impersonal voice.",
+      "expectations": [
+        "Exactly three sentences",
+        "Covers what / why / who",
+        "Impersonal voice — no first-person",
+        "Output is in German"
+      ],
+      "assertions": [
+        {"type": "content", "pattern": "MeyerBaselineBundle"},
+        {"type": "must_not", "pattern": "(?i)\\b(wir haben|ich habe|unsere)\\b"}
+      ]
+    },
+    {
+      "id": 14,
+      "prompt": "commit message auf deutsch bitte: wir haben den DataProviderDecorator regex bug gefixed, methode heisst jetzt getPimField statt get",
+      "expected_output": "Should refuse or redirect: at Netresearch, commit messages are English by team convention. Should NOT compose a German commit message.",
+      "expectations": [
+        "Refuses or redirects rather than composing a German commit message",
+        "Mentions that commits are English at Netresearch",
+        "Does NOT produce a German commit message body"
+      ],
+      "assertions": [
+        {"type": "content", "pattern": "(?i)(English|englisch|convention|konvention)"},
+        {"type": "must_not", "pattern": "^HMKG-\\d+: [A-ZÄÖÜ][a-zäöüß]+ [a-zäöüß]"}
+      ]
+    },
+    {
+      "id": 15,
+      "prompt": "können wir bitte den OROSPD-692 kommentar nochmal überarbeiten — die formulierung 'Code bricht mit Exception' soll natürlicher klingen",
+      "expected_output": "Rewrites the Anglicism 'Code bricht mit Exception' to canonical 'Code wirft eine Exception' or similar. Explains the false-friend.",
+      "expectations": [
+        "Replaces 'bricht' with canonical verb (wirft, schlägt fehl)",
+        "Explains why 'bricht' reads as anglicism",
+        "Provides the rewritten phrasing in German"
+      ],
+      "assertions": [
+        {"type": "content", "pattern": "(?i)(wirft eine Exception|schlägt fehl)"},
+        {"type": "must_not", "pattern": "Code bricht mit Exception"}
+      ]
     }
   ]
 }
