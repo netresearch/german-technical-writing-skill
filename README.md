@@ -61,6 +61,7 @@ composer require netresearch/german-technical-writing-skill
 ```
 
 Requires [netresearch/composer-agent-skill-plugin](https://github.com/netresearch/composer-agent-skill-plugin).
+
 ### npm (Node Projects)
 
 ```bash
