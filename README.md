@@ -62,6 +62,25 @@ composer require netresearch/german-technical-writing-skill
 
 Requires [netresearch/composer-agent-skill-plugin](https://github.com/netresearch/composer-agent-skill-plugin).
 
+### npm (Node Projects)
+
+```bash
+npm install --save-dev \
+  @netresearch/agent-skill-coordinator \
+  github:netresearch/german-technical-writing-skill
+```
+
+Requires [@netresearch/agent-skill-coordinator](https://github.com/netresearch/node-agent-skill-coordinator), which discovers the skill in `node_modules` and registers it in `AGENTS.md` via a `postinstall` hook. For pnpm, also allowlist the coordinator's postinstall:
+
+```json
+{
+  "pnpm": {
+    "onlyBuiltDependencies": ["@netresearch/agent-skill-coordinator"]
+  }
+}
+```
+
+
 ## Usage
 
 The skill triggers automatically when composing German prose longer than one sentence for a German-audience artifact — Jira tickets and comments, internal German wiki/spec pages, or team-chat messages to German-speaking colleagues.
