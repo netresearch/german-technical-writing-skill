@@ -84,6 +84,51 @@ Search by English concept or by the wrong-form you're tempted to write. Each row
 | "würde werfen" ohne Hypothese | Konjunktiv without counterfactual | Use Indikativ: "wirft". |
 | Überlange Substantivketten (Produkt-Konfigurations-Attribut-Validierungs-Service) | Noun-stacking beyond 3 elements | Split with *des/für/bei*: "Validierungs-Service für Produkt-Konfigurations-Attribute" |
 
+## Compound-noun calques (the "Wurzelursache" trap)
+
+These are the **opposite** of the verb-level anglicisms above. Writers who internalize "use German verbs" tend to over-correct and start *translating* English compound technical terms that should stay as loanwords. The result is grammatically perfect German that sounds like DeepL output to a native engineer because no German developer ever utters those translations.
+
+| EN | ❌ Calque | ✅ Loanword | Why |
+|---|---|---|---|
+| root cause | Wurzelursache / Hauptursache | Root Cause | *Wurzelursache* is unused in German engineering speech. Postmortems, code reviews, Jira: *Root Cause* verbatim. Plural: *Root Causes*. |
+| root-cause analysis | Wurzelursachen-Analyse | Root-Cause-Analyse | Same; hyphenated compound. |
+| caller (stack-trace) | der Aufrufer | der Caller | *Aufrufer* technically correct, but stilted in dev jargon. Stack-Trace + Debugging: *Caller*. *Aufrufstelle* OK as alternative. |
+| callsite | die Aufrufstelle (in dev jargon) | der Callsite | Same logic; *Aufrufstelle* OK in formal docs. |
+| edge case | der Randfall | der Edge Case | *Randfall* works in math/stats register but is unused in software-engineering speech. Plural: *Edge Cases*. |
+| corner case | der Eckfall | der Corner Case | Same logic. |
+| race condition | die Wettlaufbedingung | die Race Condition | *Wettlaufbedingung* is academic-CS textbook; engineering register is *Race Condition*. |
+| memory leak | das Speicherleck | das Memory Leak | *Speicherleck* exists but engineers say *Memory Leak*. |
+| stack overflow | der Stapelüberlauf | der Stack Overflow | Engineering register keeps the loanword; *Stapelüberlauf* is OS-textbook. |
+| garbage collection | die Müllabfuhr / die Speicherbereinigung | die Garbage Collection | *Müllabfuhr* is colloquial waste-disposal — never use in tech. *Speicherbereinigung* exists but is academic; engineers say *GC* or *Garbage Collection*. |
+| deadlock | die Verklemmung | das Deadlock | *Verklemmung* is OS-textbook; engineering register is *Deadlock*. |
+| heap | der Haldenspeicher | der Heap | Same trap. |
+| thread | der Faden | der Thread | *Faden* is purely literal/textile. |
+| code path | der Ausführungspfad | der Code-Pfad | Native form possible but uncommon; *Code-Pfad* dominant. |
+| hot path | der heiße Pfad | der Hot Path | Performance-Kontext; loanword only. |
+| happy path | der Glückspfad | der Happy Path | Already noted above. |
+| reproducer | das Reproduktionsbeispiel | der Reproducer | Engineering shorthand. |
+| trace | die Spur | der Trace | *Spur* is the Duden translation but engineers say *Trace*. |
+| timeout | die Zeitüberschreitung (in dev jargon) | das Timeout / der Timeout | *Zeitüberschreitung* is Duden-perfect but reads bureaucratic. |
+| stub | der Platzhalter | der Stub | *Platzhalter* exists but is for general placeholders, not test doubles. |
+| mock | das Imitat | der Mock | Same logic. |
+| pull request | die Zugverlangung | der Pull Request / der MR | *Zugverlangung* is a parodic backformation that should not exist in any document. |
+| merge conflict | der Verschmelzungskonflikt | der Merge Conflict | *Verschmelzung* is metallurgy. |
+| breaking change | die brechende Änderung | das Breaking Change / der Breaking Change | *Brechende Änderung* is calque from "breaking"; gender on the loanword unstable, both *das* and *der* attested. |
+| dry-run | der Trockenlauf | der Dry-Run | *Trockenlauf* exists in mechanical engineering, not in software. |
+
+### Decision rule
+
+If a native German developer would *say* the term verbatim in a code review or stand-up, keep it English. The litmus test isn't "does a German equivalent exist?" — Duden has German for nearly everything. The test is: "does any German engineer actually use the German equivalent in everyday speech?" If the German form sounds like a textbook chapter title, it's a calque.
+
+### Two opposite errors — keep them straight
+
+This file catalogues **two distinct failure modes**, and over-applying one drives you into the other:
+
+1. **Anglicism (verbs):** keeping English when German is canonical. *Test failt* → *schlägt fehl*. *Fehler triggern* → *Fehler auslösen*. The verb tables above target this.
+2. **Calque (compound nouns):** translating English when the loanword is canonical. *Wurzelursache* → *Root Cause*. *Wettlaufbedingung* → *Race Condition*. The compound-calque table above targets this.
+
+Both disciplines apply simultaneously. Writers who absorb only the first drift into the second.
+
 ## Pseudo-anglicisms to avoid
 
 These are German "English" words that don't exist in English or mean something else:
