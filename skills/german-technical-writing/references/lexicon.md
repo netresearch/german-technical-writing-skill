@@ -195,6 +195,46 @@ These get mistakes most often. Fix the article first:
 - **die** Pipeline, **die** Exception, **die** Fixture, **die** Assertion, **die** Response, **die** Session, **die** Migration, **die** Query, **die** Prop, **die** Factory, **die** Komponente, **die** Schnittstelle
 - **das** Interface, **das** Feature, **das** Event, **das** Ticket, **das** Issue, **das** Template, **das** Deployment, **das** Staging, **das** Logging, **das** Monitoring, **das** Framework, **das** Caching, **das** Routing, **das** Rendering, **das** Payload, **das** Refactoring, **das** Repository, **das** Schema
 
+## Debugging / Postmortem / Analysis
+
+These are the terms most prone to the calque-overcorrection trap. Native German engineers say all of these as English loanwords; translating them produces DeepL-output that no developer would speak.
+
+| EN | DE | Register | Notes |
+|---|---|---|---|
+| root cause | die Root Cause | accepted loanword | NEVER *Wurzelursache* (calque) or *Hauptursache* (works in formal text but uncommon in dev). Postmortems, code reviews, Jira: *Root Cause* verbatim. Plural: *die Root Causes*. |
+| root-cause analysis | die Root-Cause-Analyse | accepted | Hyphenated compound. *Wurzelursachen-Analyse* is wrong. |
+| caller | der Caller | accepted | Stack-trace + debugging context. *Aufrufer* technically correct but stilted in dev jargon. |
+| callsite / call site | der Callsite / die Aufrufstelle | both | Loanword dominant; native form acceptable in formal docs. |
+| call stack | der Call Stack / der Aufruf-Stack | both | |
+| stack frame | das Stackframe / der Stack-Frame | accepted | |
+| edge case | der Edge Case | accepted loanword | NEVER *Randfall* in software-engineering register. *Randfall* belongs to math/stats. Plural: *die Edge Cases*. |
+| corner case | der Corner Case | accepted | Same logic as Edge Case. |
+| code path | der Code-Pfad | accepted | *Ausführungspfad* possible but uncommon. |
+| hot path | der Hot Path | accepted | Performance-Kontext; loanword only. |
+| happy path | der Happy Path | accepted | Already in `anti-patterns.md`. |
+| code path / execution path | der Code-Pfad | accepted | |
+| race condition | die Race Condition | accepted loanword | NEVER *Wettlaufbedingung* (academic-CS textbook). |
+| deadlock | das Deadlock | accepted | NEVER *Verklemmung*. |
+| memory leak | das Memory Leak | accepted | NEVER *Speicherleck*. |
+| stack overflow | der Stack Overflow | accepted | NEVER *Stapelüberlauf*. |
+| garbage collection | die Garbage Collection / GC | accepted | NEVER *Müllabfuhr*. *Speicherbereinigung* is academic. |
+| heap | der Heap | accepted | NEVER *Haldenspeicher*. |
+| thread | der Thread | accepted | NEVER *Faden*. |
+| trace | der Trace | accepted | |
+| trace logging | das Trace-Logging | accepted | |
+| stack trace | der Stacktrace / der Stack-Trace | accepted | Already in Exceptions section. |
+| reproducer / repro | der Reproducer / das Repro | accepted | NEVER *Reproduktionsbeispiel*. |
+| postmortem | das Postmortem | accepted | |
+| breaking change | das Breaking Change / der Breaking Change | accepted | Gender unstable; both attested. NEVER *brechende Änderung*. |
+| dry-run | der Dry-Run | accepted | NEVER *Trockenlauf* (mechanical-engineering term). |
+| smoke test | der Smoke-Test | accepted | Already in CI/CD section. |
+| diff | der Diff | accepted | Already in VCS section. |
+| flag (boolean attribute) | das Flag | accepted | NEVER *die Flagge*. |
+
+### Calque check
+
+Before writing a German compound noun in tech prose, ask: *would I say this German word out loud in a code review with a German-speaking team?* If the answer is "no, I'd say the English term," keep the loanword. The litmus test isn't dictionary existence — Duden has translations for nearly everything. The test is everyday-engineering-speech use.
+
 ## When no entry exists
 
 If a term isn't here:

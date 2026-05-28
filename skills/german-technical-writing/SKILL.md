@@ -5,7 +5,7 @@ license: "(MIT AND CC-BY-SA-4.0). See LICENSE-MIT and LICENSE-CC-BY-SA-4.0"
 compatibility: "Language-only skill. No runtime dependencies."
 metadata:
   author: Netresearch DTT GmbH
-  version: "1.1.0"
+  version: "1.2.0"
   repository: https://github.com/netresearch/german-technical-writing-skill
 allowed-tools: Read
 ---
@@ -34,6 +34,17 @@ Natural German technical register for German-audience artifacts. Prevents Englis
 | auf Fehler hitten | auf Fehler stoßen |
 
 Full ~60-entry catalogue plus pseudo-anglicisms and idiom calques in `references/anti-patterns.md`. Worked pair-examples in `references/examples.md`.
+
+## Two opposite traps — apply both disciplines
+
+This skill catches **two failure modes**, and over-applying one drives you into the other:
+
+1. **Anglicism** (verb-level): keeping English when German is canonical. *Test failt* → *schlägt fehl*. *Fehler triggern* → *Fehler auslösen*. The table above and `anti-patterns.md` target this.
+2. **Calque / overcorrection** (compound-noun-level): translating English when the loanword is canonical. *Wurzelursache* → *Root Cause*. *Wettlaufbedingung* → *Race Condition*. *Speicherleck* → *Memory Leak*. See `anti-patterns.md` ("Compound-noun calques") and `lexicon.md` ("Debugging / Postmortem / Analysis").
+
+Decision rule for nouns: if a native German developer would *say* the term verbatim in a code review or stand-up, keep it English. The litmus test isn't "does a German equivalent exist?" — it's "does any German engineer actually use the German equivalent in everyday speech?" If the German form sounds like a textbook chapter title, it's a calque.
+
+Writers who absorb "use German verbs" without absorbing "keep loanword nouns" produce DeepL-grade output. Apply both simultaneously.
 
 ## Scope note
 
