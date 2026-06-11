@@ -48,4 +48,4 @@ Absorbing "use German verbs" without "keep loanword nouns" produces DeepL-grade 
 
 ## Scope note
 
-Commit messages, MR/PR descriptions, release notes and internal IT-project tickets (Netresearch: NRS, NRT, SRV*, IO*, LIC) are English — skip them. This skill governs *how* to write German, never *whether* German is the right choice.
+Commit messages, MR/PR descriptions, release notes and internal IT-project tickets (Netresearch: NRS, NRT, SRV\*, IO\*, LIC) are English — skip them. This skill governs *how* to write German, never *whether* German is the right choice.
