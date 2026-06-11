@@ -37,15 +37,15 @@ Full ~60-entry catalogue plus pseudo-anglicisms and idiom calques in `references
 
 ## Two opposite traps — apply both disciplines
 
-This skill catches **two failure modes**, and over-applying one drives you into the other:
+**Two failure modes** — over-applying one drives you into the other:
 
 1. **Anglicism** (verb-level): keeping English when German is canonical. *Test failt* → *schlägt fehl*. *Fehler triggern* → *Fehler auslösen*. The table above and `anti-patterns.md` target this.
 2. **Calque / overcorrection** (compound-noun-level): translating English when the loanword is canonical. *Wurzelursache* → *Root Cause*. *Wettlaufbedingung* → *Race Condition*. *Speicherleck* → *Memory Leak*. See `anti-patterns.md` ("Compound-noun calques") and `lexicon.md` ("Debugging / Postmortem / Analysis").
 
-Decision rule for nouns: if a native German developer would *say* the term verbatim in a code review or stand-up, keep it English. The litmus test isn't "does a German equivalent exist?" — it's "does any German engineer actually use the German equivalent in everyday speech?" If the German form sounds like a textbook chapter title, it's a calque.
+Decision rule for nouns: if a native German developer would *say* the term verbatim in a code review or stand-up, keep it English. The litmus test isn't "does a German equivalent exist?" — it's "do German engineers actually use it in everyday speech?" A German form that sounds like a textbook chapter title is a calque.
 
-Writers who absorb "use German verbs" without absorbing "keep loanword nouns" produce DeepL-grade output. Apply both simultaneously.
+Absorbing "use German verbs" without "keep loanword nouns" produces DeepL-grade output. Apply both simultaneously.
 
 ## Scope note
 
-Commit messages, MR/PR descriptions, and release notes are English at Netresearch and most agencies delivering customer projects — this skill does not apply to them.
+Commit messages, MR/PR descriptions, release notes and internal IT-project tickets (Netresearch: NRS, NRT, SRV\*, IO\*, LIC) are English — skip them. This skill governs *how* to write German, never *whether* German is the right choice.
