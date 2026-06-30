@@ -84,6 +84,19 @@ Search by English concept or by the wrong-form you're tempted to write. Each row
 | "würde werfen" ohne Hypothese | Konjunktiv without counterfactual | Use Indikativ: "wirft". |
 | Überlange Substantivketten (Produkt-Konfigurations-Attribut-Validierungs-Service) | Noun-stacking beyond 3 elements | Split with *des/für/bei*: "Validierungs-Service für Produkt-Konfigurations-Attribute" |
 
+## Filler & meta-commentary (the „ehrlich gesagt" trap)
+
+Empty throat-clearing that prefaces a statement by asserting its own sincerity, or re-announces what was already said. Pure calque of English *to be honest (with you)* / *frankly* / *I'll be straight with you*. German technical prose states the fact directly — honesty is the baseline of the exchange, so the preface is redundant, reads as translated American register, and distracts from the content. Cut it.
+
+| EN filler | ❌ Calque | ✅ Fix | Why |
+|---|---|---|---|
+| to be honest / honestly / frankly | ehrlich gesagt / um ehrlich zu sein / ganz ehrlich / offen gesagt | *(cut — state the fact directly)* | Sincerity is assumed; in technical prose the preface is filler. *Ehrlich gesagt* exists colloquially but adds nothing here. The multi-clause form (*„ich sage dir lieber ehrlich …, statt zu verschleiern"*) is egregious — a reader asks "so otherwise you *don't*?" |
+| to be fair | fairerweise muss man sagen (as filler) | *(cut, or „allerdings" / „andererseits")* | Calqued concessive hedge. |
+| as I said / like I said | wie (bereits) gesagt — *as filler* | *(cut, unless it genuinely points back to a specific earlier statement)* | Filler unless a real back-reference. |
+| I have to say / I must admit | ich muss sagen / ich muss zugeben | *(cut — drop the meta-frame)* | First-person meta-commentary; also breaks the impersonal-voice rule in artifacts. |
+
+Applies in chat to colleagues too, not only in formal artifacts — and the English originals are just as unwelcome, so do not fall back to *"to be honest, …"* either.
+
 ## Compound-noun calques (the "Wurzelursache" trap)
 
 These are the **opposite** of the verb-level anglicisms above. Writers who internalize "use German verbs" tend to over-correct and start *translating* English compound technical terms that should stay as loanwords. The result is grammatically perfect German that sounds like DeepL output to a native engineer because no German developer ever utters those translations.
@@ -119,6 +132,8 @@ These are the **opposite** of the verb-level anglicisms above. Writers who inter
 ### Decision rule
 
 If a native German developer would *say* the term verbatim in a code review or stand-up, keep it English. The litmus test isn't "does a German equivalent exist?" — Duden has German for nearly everything. The test is: "does any German engineer actually use the German equivalent in everyday speech?" If the German form sounds like a textbook chapter title, it's a calque.
+
+**Align to the product's German UI** — the same litmus from the other side. When a tool ships a German interface, use *its* term, not the English word you would say in English. Confluence: *Entwurf* (not „Draft"), *Veröffentlichen* / *veröffentlichen* (not „publizieren"). And avoid vague English umbrella-nouns where a precise German term is standard — *Schnittstelle* / *Anbindung*, not „Connector". A German user of the German UI says „Entwurf", so „Draft" reads as untranslated: here the loanword is *not* the verbatim term, the German one is.
 
 ### Two opposite errors — keep them straight
 
