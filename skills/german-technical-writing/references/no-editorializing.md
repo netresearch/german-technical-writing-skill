@@ -1,15 +1,17 @@
-## No editorializing — inform, don't sell (tone, not wordlist)
+# No editorializing — inform, don't sell (tone, not wordlist)
 
-Applies to every written artifact: commit messages, PR/MR descriptions, review
-comments, issue/ticket text, chat — and code comments, docstrings,
-documentation, README and changelog files.
+Applies to the German-language artifacts this skill governs (tickets, internal
+wiki/spec docs, team chat). The skill's scope note already excludes English
+artifacts (commit messages, MR/PR descriptions, release notes); this rule does
+not re-add them — it is the *how-you-write* discipline for the German prose the
+skill does cover.
 
 Editorializing is a matter of **tone and intent, not specific words** — no
 banned-word list catches it, and the same word can be fine or not depending on
 whether it carries a fact. The failure is writing about *how good, clean, or
 careful the work is* instead of *what it does*. The reader has the diff and the
 artifact; anything that only flatters the work or reassures them adds nothing,
-and to a reviewer it reads as salesmanship — it provokes a contra-reaction
+and to a reviewer it reads as salesmanship — it provokes a counter-reaction
 before they reach the substance.
 
 Apply three tests before a sentence stays:
