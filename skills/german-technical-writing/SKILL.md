@@ -12,7 +12,7 @@ allowed-tools: Read
 
 # German Technical Writing
 
-Natural German technical register for German-audience artifacts. Prevents English-first composition plus phrase-by-phrase translation, which produces grammatically correct German that reads as DeepL-output to native readers.
+Natural German technical register for German-audience artifacts. Prevents English-first composition plus phrase-by-phrase translation that reads as DeepL-output to natives.
 
 ## Process
 
@@ -20,7 +20,8 @@ Natural German technical register for German-audience artifacts. Prevents Englis
 2. **Self-review each sentence** against `references/anti-patterns.md`.
 3. **Apply the lexicon** — canonical verbs and loanword gender: `references/lexicon.md`.
 4. **Match register** — Präsens-Indikativ, impersonal voice, no first-person: `references/register.md`.
-5. **If unsure, ask — don't guess.**
+5. **No editorializing** — say what changed, not how good/careful the work is; no self-praise or narrating the expected: `references/no-editorializing.md`.
+6. **If unsure, ask — don't guess.**
 
 ## Top anti-patterns
 
@@ -37,15 +38,15 @@ Full ~60-entry catalogue plus pseudo-anglicisms and idiom calques in `references
 
 ## Two opposite traps — apply both disciplines
 
-**Two failure modes** — over-applying one drives you into the other:
+Over-applying one drives you into the other:
 
 1. **Anglicism** (verb-level): keeping English when German is canonical. *Test failt* → *schlägt fehl*. *Fehler triggern* → *Fehler auslösen*. The table above and `anti-patterns.md` target this.
 2. **Calque / overcorrection** (compound-noun-level): translating English when the loanword is canonical. *Wurzelursache* → *Root Cause*. *Wettlaufbedingung* → *Race Condition*. *Speicherleck* → *Memory Leak*. See `anti-patterns.md` ("Compound-noun calques") and `lexicon.md` ("Debugging / Postmortem / Analysis").
 
-Decision rule for nouns: if a native German developer would *say* the term verbatim in a code review or stand-up, keep it English. The litmus test isn't "does a German equivalent exist?" — it's "do German engineers actually use it in everyday speech?" A German form that sounds like a textbook chapter title is a calque.
+Decision rule for nouns: if a native German developer would *say* the term verbatim in a review or stand-up, keep it English. The test isn't "does a German equivalent exist?" but "do German engineers actually say it?" A German form that sounds like a textbook title is a calque.
 
-Absorbing "use German verbs" without "keep loanword nouns" produces DeepL-grade output. Apply both simultaneously.
+"German verbs" without "keep loanword nouns" produces DeepL-grade output. Apply both.
 
 ## Scope note
 
-Commit messages, MR/PR descriptions, release notes and internal IT-project tickets (Netresearch: NRS, NRT, SRV\*, IO\*, LIC) are English — skip them. This skill governs *how* to write German, never *whether* German is the right choice.
+Commit messages, MR/PR descriptions, release notes and internal IT-project tickets (NRS, NRT, SRV\*, IO\*, LIC) are English — skip them. This skill governs *how* to write German, never *whether* German is the right choice.
