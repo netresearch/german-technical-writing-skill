@@ -155,5 +155,6 @@ Before posting any German artifact longer than one sentence, read through it onc
 6. ☐ Are ß/ä/ö/ü intact?
 7. ☐ Does any sentence contain a calqued English idiom ("am Ende des Tages", "low-hanging fruit", "auf derselben Seite")?
 8. ☐ If bullet points: are they in parallel grammatical form?
+9. ☐ Any English-calque filler / meta-commentary („ehrlich gesagt", „um ehrlich zu sein", „wie gesagt" as filler, „to be honest")? Cut it — state the fact directly.
 
 If any check fails, fix it before posting.

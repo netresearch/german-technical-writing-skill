@@ -217,6 +217,21 @@
         {"type": "content", "pattern": "(?i)(wirft eine Exception|schlägt fehl)"},
         {"type": "must_not", "pattern": "Code bricht mit Exception"}
       ]
+    },
+    {
+      "id": 16,
+      "prompt": "schreib bitte eine kurze Matrix-Nachricht ans DXP-Team auf deutsch: die Confluence-Seite zum Deployment-RFC ist noch ein Entwurf, ich veröffentliche sie nach dem Review, Feedback bis Freitag bitte",
+      "expected_output": "Short German team-chat message using the German Confluence UI terms (Entwurf, veröffentliche), with no English-calque filler ('ehrlich gesagt') and no gratuitous English jargon ('Draft', 'publishen').",
+      "expectations": [
+        "Uses 'Entwurf' (not 'Draft') and 'veröffentlich*' (not 'publizieren'/'publishen')",
+        "No filler/meta-honesty preface ('ehrlich gesagt', 'um ehrlich zu sein')",
+        "Mentions Review and the Freitag deadline"
+      ],
+      "assertions": [
+        {"type": "content", "pattern": "(?i)entwurf"},
+        {"type": "content", "pattern": "(?i)veröffentlich"},
+        {"type": "must_not", "pattern": "(?i)\\b(draft|publishen|publizieren|publiziere|ehrlich gesagt|um ehrlich zu sein)\\b"}
+      ]
     }
   ]
 }
