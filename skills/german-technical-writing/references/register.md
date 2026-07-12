@@ -82,7 +82,7 @@ h2. Abhängigkeiten
 * Parent Epic: [key]
 ```
 
-Style: bullets in parallel grammatical form (all noun phrases or all imperative verbs, not mixed) — tense and voice follow the Tense and Person sections above.
+Style: bullets in parallel grammatical form (all noun phrases or all imperative verbs, not mixed) — tense and person follow the Tense and Person sections above.
 
 ### Jira Comment
 
