@@ -2,7 +2,7 @@
 
 Register is the biggest single driver of whether German technical prose reads as native or translated. Use this reference when composing longer artifacts: Jira descriptions and comments, internal German-language wiki pages, RFC/spec documents, and team-chat messages to German-speaking colleagues.
 
-**Not in scope:** commit messages, MR/PR descriptions, and release notes — at Netresearch and most agencies delivering customer projects, those are written in English by team convention regardless of the team's native language.
+**Not in scope:** commit messages, MR/PR descriptions, and release notes — English by team convention (see `SKILL.md` § Scope note).
 
 ## Tense
 
@@ -37,8 +37,6 @@ Register is the biggest single driver of whether German technical prose reads as
 
 - ✅ "Die Exception wird zur Laufzeit geworfen."
 - ✅ "Die PriceListToCustomer-Rows werden beim PricingStorageIsolator-Lauf neu aufgebaut."
-
-**Avoid mixing active and passive in a single flow.** Pick one per paragraph for parallelism.
 
 **Never use "man" in technical writing for a concrete actor.** It's acceptable in generic statements ("man kann X auch über Y erreichen") but clunky when a subject is identifiable.
 
@@ -84,10 +82,7 @@ h2. Abhängigkeiten
 * Parent Epic: [key]
 ```
 
-Style:
-- Impersonal throughout — no "ich/wir"
-- Present tense for the problem description (it *is* broken now)
-- Bullets in parallel grammatical form (all noun phrases or all imperative verbs, not mixed)
+Style: bullets in parallel grammatical form (all noun phrases or all imperative verbs, not mixed) — tense and person follow the Tense and Person sections above.
 
 ### Jira Comment
 
@@ -97,16 +92,9 @@ Style:
 - Code elements in `{{monospace}}`
 - Closing: facts + next action, no hedging ("Hoffen wir mal", "Scheint zu funktionieren" — cut)
 
-### Commit messages, MR/PR descriptions, and release notes — not in scope
-
-At Netresearch and most agencies delivering customer projects, commit messages, MR/PR descriptions, and release notes are all written in English by team convention regardless of the team's native language. Do **not** apply this skill's guidance to those artifacts — if a German version crosses your desk, flag it as off-convention rather than polish the German.
-
 ### Internal German Wiki / Spec Pages
 
-- Sie-Form for customer-facing docs; Du-Form for internal team wiki (HMKG convention)
-- Impersonal voice in specification sections; direct voice acceptable in how-to sections
-- Heading hierarchy: `#` for page title, `##` for major sections, `###` for subsections
-- Technical terms in the established lexicon — same rules as Jira prose
+Impersonal voice in specification sections; direct voice acceptable in how-to sections. Sie/Du choice follows the Person section above.
 
 ## Sentence Length
 
@@ -129,19 +117,6 @@ German loves compound nouns. Technical writing leverages this, but beware overst
   - → "Validierungs-Service für Produkt-Konfigurations-Attribute"
 
 **Hyphenation rule:** connect with `-` when at least one component is a loanword (*Exception-Handler*, *PriceList-Rebuild*, *CI-Pipeline*). Pure German compounds can omit hyphens (*Konfigurationsattribut*) but hyphens are always safe for readability.
-
-## Orthography Minimums
-
-Never substitute these with ASCII:
-
-- **ß** — "weiß", "Fuß", "groß", "Maß". Never write "weiss", "Fuss". (exception: Swiss German drops ß — not our context)
-- **ä ö ü** — "Qualität", "Überprüfung", "Änderung". Never "ae/oe/ue" in normal text.
-- **„…"** — German quotation marks. In Jira markup or code contexts, straight quotes `"..."` are fine. In plain prose, use `„…"` for nested quotes.
-
-Capitalization:
-- All nouns capitalized (the default German rule — don't forget)
-- Verbs used as nouns capitalized: *"das Rebuilden der Combined-Price-Lists"*
-- Adjectives normally lowercase unless nominalized: *"das Wichtigste ist X"* (nominalized), *"der wichtige Schritt"* (attribute)
 
 ## Checklist — self-review pass
 
