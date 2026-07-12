@@ -20,7 +20,7 @@ This is an **Agent Skill** following the [open standard](https://agentskills.io)
 
 - **Anti-pattern detection**: ~60 false-friends catalogued — `brechen`, `gefangen`, `returnen`, `failen`, `triggern`, `hitten`, plus calqued idioms (*am Ende des Tages*, *Low-hanging Fruit*) and pseudo-anglicisms (`Handy`, `Beamer`)
 - **Technical lexicon**: preferred German forms with gender for Exceptions, Tests, Git, CI/CD, HTTP, Frontend, Data, and Architecture domains
-- **Register enforcement**: Präsens-Indikativ default, impersonal voice, no first-person in artifacts, sentence-length and compound-noun rules, ß/ä/ö/ü orthography
+- **Register enforcement**: Präsens-Indikativ default, impersonal voice, no first-person in artifacts, sentence-length and compound-noun rules
 - **Artifact-specific conventions**: Jira ticket descriptions, Jira comments, internal German wiki/spec pages
 - **Worked examples**: 6 paired bad-vs-good cases with annotations
 
