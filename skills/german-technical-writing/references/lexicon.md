@@ -78,6 +78,8 @@ Table of technical terms with gender, preferred form, and usage notes. Use this 
 | build (noun) | der Build | accepted | plural: *die Builds*. |
 | deploy (noun) | das Deploy / das Deployment | accepted | |
 | deploy (verb) | deployen / ausrollen | both | |
+| apply (verb) | ausrollen / anwenden / ausführen | native | Terraform/CI: *den Plan ausrollen*. NOT *applyen* / *ich applye*. |
+| apply (noun) | der Apply / der Apply-Job | accepted | the CI job. |
 | rollout | der Rollout / die Ausrollung | accepted | *Rollout* dominant. |
 | rollback | der Rollback | accepted | |
 | staging | das Staging / die Staging-Umgebung | accepted | |
