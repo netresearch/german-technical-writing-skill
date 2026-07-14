@@ -78,6 +78,8 @@ Table of technical terms with gender, preferred form, and usage notes. Use this 
 | build (noun) | der Build | accepted | plural: *die Builds*. |
 | deploy (noun) | das Deploy / das Deployment | accepted | |
 | deploy (verb) | deployen / ausrollen | both | |
+| apply (verb) | ausrollen / anwenden / ausführen | native | Terraform/CI: *den Plan ausrollen*. NOT *applyen* / *ich applye*. |
+| apply (noun) | der Apply / der Apply-Job | accepted | the CI job. plural: *die Applies* / *die Apply-Jobs*. |
 | rollout | der Rollout / die Ausrollung | accepted | *Rollout* dominant. |
 | rollback | der Rollback | accepted | |
 | staging | das Staging / die Staging-Umgebung | accepted | |
@@ -191,7 +193,7 @@ Table of technical terms with gender, preferred form, and usage notes. Use this 
 
 These get mistakes most often. Fix the article first:
 
-- **der** Commit, **der** Rebase, **der** Merge, **der** Branch, **der** Build, **der** Bug, **der** Fix, **der** Patch, **der** Hook, **der** Mock, **der** Stub, **der** Wrapper, **der** Decorator, **der** Provider, **der** Service, **der** Controller, **der** Token, **der** Header, **der** Callback, **der** Listener, **der** State, **der** Request, **der** Endpoint, **der** Cache, **der** Index, **der** Timeout (or *das*), **der** Retry
+- **der** Commit, **der** Rebase, **der** Merge, **der** Branch, **der** Build, **der** Bug, **der** Fix, **der** Patch, **der** Hook, **der** Mock, **der** Stub, **der** Wrapper, **der** Decorator, **der** Provider, **der** Service, **der** Controller, **der** Token, **der** Header, **der** Callback, **der** Listener, **der** State, **der** Request, **der** Endpoint, **der** Cache, **der** Index, **der** Timeout (or *das*), **der** Retry, **der** Apply, **der** Apply-Job
 - **die** Pipeline, **die** Exception, **die** Fixture, **die** Assertion, **die** Response, **die** Session, **die** Migration, **die** Query, **die** Prop, **die** Factory, **die** Komponente, **die** Schnittstelle
 - **das** Interface, **das** Feature, **das** Event, **das** Ticket, **das** Issue, **das** Template, **das** Deployment, **das** Staging, **das** Logging, **das** Monitoring, **das** Framework, **das** Caching, **das** Routing, **das** Rendering, **das** Payload, **das** Refactoring, **das** Repository, **das** Schema
 
