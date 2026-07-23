@@ -4,11 +4,11 @@ Two rule sets. Typography is mechanical — apply it verbatim. Rhythm rules desc
 
 ## Typografie
 
-**Gedankenstrich.** German uses the Halbgeviertstrich `–` with spaces on both sides — never the English em-dash `—`. Budget: at most one Gedankenstrich-Einschub per paragraph; the default separators are comma, colon, and full stop. Number and date ranges take `–` without spaces: *S. 22–24*, *28.–29. Februar*.
+**Gedankenstrich.** German uses the Halbgeviertstrich `–` with spaces on both sides — never the English em-dash `—`. Budget: at most one or two per *text*, not per paragraph. The specific tell is the recurring „pointierter Nachklapp" rhythm (*„… blockiert erneut – am eigentlichen Problem ändert das nichts"*) closing paragraph after paragraph: even with the correct glyph, a dash-appended punchline in most paragraphs reads generated. Close those sentences with a colon, a full stop, or a subordinate clause instead. Number and date ranges take `–` without spaces: *S. 22–24*, *28.–29. Februar*.
 
 **Anführungszeichen.** German quotes open low, close high: `„…“` (inner: `‚…‘`). Guillemets `»…«` are the valid alternative; pick one convention per document. A comma meeting a closing quote goes after it: *„fertig“,* not *„fertig,“*. Straight `"…"` only inside code spans.
 
-**Durchkopplung.** A multi-word English term inside a compound couples with hyphens throughout: *End-to-End-Test*, *Continuous-Integration-Pipeline*, *Cart-Merge-Feature*. The most common mistake is coupling only the last joint (*Social Media-Plattform* → *Social-Media-Plattform*). A bare English phrase not forming a compound keeps its spacing (*Machine Learning*), but couples fully the moment it takes another element (*Machine-Learning-Modell*). Don't invent compounds where a prepositional phrase is what a dev would say: *bei mehreren Consumern*, not *im Mehr-Consumer-Betrieb*.
+**Durchkopplung & Zusammenschreibung.** A multi-word English term inside a compound couples with hyphens throughout: *End-to-End-Test*, *Continuous-Integration-Pipeline*, *Cart-Merge-Feature*. The most common mistake is coupling only the last joint (*Social Media-Plattform* → *Social-Media-Plattform*). A bare English phrase not forming a compound keeps its spacing (*Machine Learning*), but couples fully the moment it takes another element (*Machine-Learning-Modell*). Simple two-part compounds with an established loanword close up — *Speicherlimit*, *Cachegröße*, *Codebasis* — hyphenate only where the joint is hard to read or one part is a raw English term (*Exception-Handler*, *Fixture-Set*). Whichever treatment a term gets, keep it identical throughout the text — *Combined-Price-Lists* in one paragraph and *Combined Price Lists* in the next is a tell of its own. Don't invent compounds where a prepositional phrase is what a dev would say: *bei mehreren Consumern*, not *im Mehr-Consumer-Betrieb*.
 
 **Zahlen, Datum, Uhrzeit.** Decimal comma, thousands point: *1.234,56*, *199,95 €*. Time with colon plus *Uhr*: *18:00 Uhr*. Date *23.07.2026* or ISO *2026-07-23*; with month name no leading zero (*7. März*). Units keep a space: *512 MB*, *2 GB*.
 
@@ -36,6 +36,10 @@ Two rule sets. Typography is mechanical — apply it verbatim. Rhythm rules desc
 
 **Chat hat Partikeln.** In Du-Form chat, modal particles carry the collegial register: *eh, halt, mal, eben, ja, doch* (*„läuft eh knapp am Limit", „schau mal in Zeile 84"*). Their total absence reads translated. In formal artifacts (Jira descriptions, wiki specs) they stay out.
 
+**Slang-Formen folgen dem Register des ganzen Texts.** Germanized dev-slang participles (*deprecatet*, *gemergt*, *gefixt*) belong in texts that run on the loose register throughout. In an otherwise formal artifact they break register — there, use the full loanword phrase (*als deprecated markiert*) or the native verb (*behoben*). Don't mix one slang participle into a polished text.
+
+**Absätze bleiben Absätze.** A Jira comment keeps its blank lines: one thought per paragraph, an empty line before a verdict lead-in like *„Kurz gesagt:"*. Collapsing a multi-point comment into one block trades scannability for nothing.
+
 ## Selbstcheck
 
-A quick scan after composing: any `—`? More than one `–`-Einschub in a paragraph? English quotes? An uncoupled English compound? The same fact stated twice? Three symmetric anything? A term glossed for people who coined it? A *„Damit ist … ausgeschlossen"*? A closing summary? Two names for one thing? If yes — fix before posting.
+A quick scan after composing: any `—`? More than two `–`-Einschübe in the whole text, or dash-punchlines closing several paragraphs? English quotes? An uncoupled English compound, a needlessly hyphenated simple one (*Speicher-Limit*), or the same term spelled two ways? The same fact stated twice? Three symmetric anything? A term glossed for people who coined it? A *„Damit ist … ausgeschlossen"*? A closing summary? A lone slang participle in a formal text? A Jira comment collapsed into one block? If yes — fix before posting.

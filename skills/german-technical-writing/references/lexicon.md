@@ -186,7 +186,7 @@ Table of technical terms with gender, preferred form, and usage notes. Use this 
 | to debug | debuggen | |
 | to profile | ein Profiling machen / profilieren (Messung) | bare *profilen* is awkward (collides with *sich profilieren*); usually rephrased via the noun. |
 | to optimize | optimieren | |
-| to deprecate | deprecaten / als deprecated markieren | *als veraltet markieren* reads as stiff paraphrase in dev register — keep the loanword. |
+| to deprecate | deprecaten / als deprecated markieren | *als veraltet markieren* reads as stiff paraphrase in dev register — keep the loanword. Participle *deprecatet* only in loose-register texts; in formal artifacts use *als deprecated markiert*. |
 | to document | dokumentieren | |
 
 ## Articles for ambiguous loanwords
