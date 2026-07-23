@@ -144,14 +144,40 @@ Real paired cases from past Jira tickets and team-chat announcements. Each pair 
 - *verschieben sich* replaces *slippt* — proper German
 - *"nächsten Deploy"* — *Deploy* is accepted loanword, use it without *Window*
 
+## Case 7 — The over-polished ADR (correct German, machine register)
+
+**Bad (grammatically clean, instantly recognizable as AI):**
+
+> Der Aufruf blockiert, solange die Preisberechnung läuft. Dauert die Berechnung länger, wartet der Checkout auf das Ergebnis. Unter hoher Last summieren sich diese Wartezeiten — der Checkout bricht ab. Der Checkout blockiert damit nicht mehr auf der Preisberechnung, sondern nutzt den letzten bekannten Preis aus dem Datenbestand. Damit ist die Race Condition ausgeschlossen.
+
+**Problems:**
+
+1. Sentences 1 and 2 say the same thing — restatement padding
+2. *"blockiert auf der Preisberechnung"* — collocation calque of "blocks on"
+3. *"aus dem Datenbestand"* — Amtsdeutsch; devs say *Datenbank* / *DB*
+4. English em-dash `—`; German uses `–` with spaces, sparingly
+5. *"Damit ist … ausgeschlossen"* — datasheet absolutism; devs relativize
+
+**Good:**
+
+> Der Checkout wartet bisher synchron auf die Preisberechnung; unter Last läuft er dabei in Timeouts. Künftig nutzt er den letzten bekannten Preis aus der Datenbank, die Neuberechnung läuft asynchron. Die Race Condition sollte damit nicht mehr auftreten.
+
+**Why it works:**
+
+- One statement per fact, varied sentence lengths
+- *wartet auf* instead of the *blockiert auf* calque
+- Plain *Datenbank*, no officialese
+- Relativized claim (*sollte … nicht mehr auftreten*)
+
 ## Meta-observation
 
 Across these cases, the repeating failure modes are:
 
-1. **First person slipping into artifacts** — chat habits bleeding into persistent text
+1. **First person slipping into artifacts** — chat habits bleeding into persistent text (and the inverse: impersonal consultant voice bleeding into chat)
 2. **Verb-cognate translation** — grabbing the first German verb that sounds like the English one, instead of the established technical one
 3. **Idiom calquing** — translating an English idiom word-for-word when German has no equivalent (the idiom has to be dropped or reformulated)
 4. **Untranslated adjectives** — *empty*, *silent*, *bare*, *flaky*, *green* — German has all of these, the writer just forgot to switch
 5. **Konjunktiv II for non-hypotheticals** — adding *würde* to soften when the sentence should be blunt Indikativ
+6. **Machine register despite correct German** — restatement padding, symmetric paragraphs, em-dashes, absolutist claims, Amtsdeutsch vocabulary (Case 7; full rules in `typografie-rhythmus.md`)
 
-When reviewing your own German draft, scan for these five patterns specifically. One pass is usually enough.
+When reviewing your own German draft, scan for these six patterns specifically. One pass is usually enough.

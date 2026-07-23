@@ -30,8 +30,8 @@ Register is the biggest single driver of whether German technical prose reads as
 
 **Active preferred when an actor is identifiable.** Pick it when you're describing what a specific service/test/user does.
 
-- ✅ "Der PricingStorageIsolator rebuildet die Combined-Price-Lists aus den raw-Rows."
-- ✅ "Das Fixture-Loader liest die YAMLs aus `tests/Fixtures/`."
+- ✅ "Der PricingStorageIsolator baut die Combined-Price-Lists aus den raw-Rows neu auf."
+- ✅ "Der Fixture-Loader liest die YAMLs aus `tests/Fixtures/`."
 
 **Passive for system behavior where the actor is irrelevant or diffuse.** Jira ticket descriptions often benefit from passive because they describe outcomes, not actors.
 
@@ -45,11 +45,17 @@ Register is the biggest single driver of whether German technical prose reads as
 
 ## Person
 
-**No first person in artifact text.** Ever. "Ich", "wir", "uns" belong in informal chat replies and 1:1 communication — not in Jira descriptions or internal wiki/spec pages.
+**No first person in persistent artifacts** — Jira descriptions, wiki/spec pages, and Jira comments describing system behavior.
 
 - ❌ "Wir haben den Bug gefixt."
 - ✅ "Der Bug ist behoben." (Perfekt-Passiv)
 - ✅ "Der Fix ist enthalten in Commit abc1234." (if you need to name it)
+
+**Chat is the opposite register — first person is REQUIRED there.** A Du-Form chat message to a colleague speaks as *ich* to *du*, with modal particles (*eh, halt, mal*) and colloquial verdicts. Do NOT carry the artifact rules into chat: impersonal passive and consultant-*wir* read as a sales pitch, not a colleague.
+
+- ❌ *(Chat)* "Wir würden eher Letzteres empfehlen." *(Berater-Wir + Konjunktiv + gehobenes „Letzteres" — Angebots-Register)*
+- ✅ *(Chat)* "Ich würd eher das Zweite nehmen, der Runner läuft eh knapp am Limit."
+- *wir* in chat is fine only when it factually means the team ("wir deployen heute Abend").
 
 **Second person only in user-facing documentation aimed at a reader.** Use Sie-Form in product-facing documentation, Du-Form in internal wiki/team docs (HMKG team uses Du).
 
@@ -123,13 +129,15 @@ German loves compound nouns. Technical writing leverages this, but beware overst
 Before posting any German artifact longer than one sentence, read through it once and ask:
 
 1. ☐ Is every verb drawn from the German technical lexicon, not translated from English?
-2. ☐ Is the tense Präsens-Indikativ (default) or justified Konjunktiv/Perfekt?
-3. ☐ Is there any first-person ("ich", "wir") that should be impersonal?
-4. ☐ Is every sentence under 25 words?
-5. ☐ Are compound nouns split at ≤3 elements or with prepositions beyond that?
-6. ☐ Are ß/ä/ö/ü intact?
-7. ☐ Does any sentence contain a calqued English idiom ("am Ende des Tages", "low-hanging fruit", "auf derselben Seite")?
-8. ☐ If bullet points: are they in parallel grammatical form?
-9. ☐ Any English-calque filler / meta-commentary („ehrlich gesagt", „um ehrlich zu sein", „wie gesagt" as filler, „to be honest")? Cut it — state the fact directly.
+2. ☐ Is every verb+preposition pairing a real German collocation („wartet auf", not „blockiert auf")?
+3. ☐ Is the tense Präsens-Indikativ (default) or justified Konjunktiv/Perfekt?
+4. ☐ Artifact: any first-person that should be impersonal? Chat: any impersonal/consultant-wir that should be „ich"?
+5. ☐ Is every sentence under 25 words — and do sentence lengths vary?
+6. ☐ Are compound nouns split at ≤3 elements or with prepositions beyond that?
+7. ☐ Are ß/ä/ö/ü intact, quotes German („…“), dashes – not —?
+8. ☐ Does any sentence contain a calqued English idiom ("am Ende des Tages", "low-hanging fruit", "auf derselben Seite")?
+9. ☐ If bullet points: are they in parallel grammatical form?
+10. ☐ Any English-calque filler / meta-commentary („ehrlich gesagt", „um ehrlich zu sein", „wie gesagt" as filler, „to be honest")? Cut it — state the fact directly.
+11. ☐ Is every fact and mechanism stated exactly once, no summary paragraph, one term per concept? (Full list: `typografie-rhythmus.md`)
 
 If any check fails, fix it before posting.

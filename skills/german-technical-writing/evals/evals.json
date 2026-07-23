@@ -232,6 +232,70 @@
         {"type": "content", "pattern": "(?i)veröffentlich"},
         {"type": "must_not", "pattern": "(?i)\\b(draft|publishen|publizieren|publiziere|ehrlich gesagt|um ehrlich zu sein)\\b"}
       ]
+    },
+    {
+      "id": 17,
+      "prompt": "translate this into german for a jira comment: 'This makes sense for now, but at the end of the day the business has to decide. Going forward we should deprecate the old code path — there are edge cases where the fallback silently swallows the exception.'",
+      "expected_output": "Natural German without idiom calques (no 'macht Sinn', 'am Ende des Tages'), keeps 'Edge Cases' as loanword, uses 'deprecaten' or 'als deprecated markieren', German dash typography (– not —).",
+      "expectations": [
+        "No 'macht Sinn' (use 'ist sinnvoll' or 'ergibt Sinn')",
+        "No 'am Ende des Tages' (use 'letztlich'/'unterm Strich')",
+        "Keeps 'Edge Cases' as loanword",
+        "No English em-dash (—) — German Halbgeviertstrich (–) or comma/colon instead",
+        "No 'stillschweigend verschluckt' doubling"
+      ],
+      "assertions": [
+        {"type": "must_not", "pattern": "(?i)(macht|machen) Sinn"},
+        {"type": "must_not", "pattern": "(?i)am Ende des Tages"},
+        {"type": "must_not", "pattern": "—"},
+        {"type": "must_not", "pattern": "(?i)stillschweigend verschluck"},
+        {"type": "content", "pattern": "(?i)edge.cases"}
+      ]
+    },
+    {
+      "id": 18,
+      "prompt": "schreib bitte eine kurze matrix-nachricht an paul (du-form): sein test failt in der CI weil elasticsearch dort nur 512MB heap hat, lokal hat er 2GB. empfiehl ihm, den test auf ein kleineres fixture-set umzustellen statt den heap hochzudrehen.",
+      "expected_output": "Collegial Du-Form chat message speaking as 'ich' — no impersonal passive, no consultant-'wir würden empfehlen'. Modal particles welcome.",
+      "expectations": [
+        "First person 'ich' for the recommendation (chat register)",
+        "No consultant phrasing ('Wir würden ... empfehlen', 'Es wird empfohlen')",
+        "Du-Form address to Paul"
+      ],
+      "assertions": [
+        {"type": "content", "pattern": "(?i)\\bich\\b"},
+        {"type": "must_not", "pattern": "(?i)wir würden"},
+        {"type": "must_not", "pattern": "(?i)es wird empfohlen"}
+      ]
+    },
+    {
+      "id": 19,
+      "prompt": "für das interne wiki auf deutsch, 2 absätze: warum der checkout nicht mehr synchron auf die preisberechnung warten soll, sondern events und den letzten bekannten preis aus der datenbank nutzt.",
+      "expected_output": "German wiki prose with correct collocations: no 'blockiert auf' calque, no 'Datenbestand' officialese, no em-dash, database referred to consistently as 'Datenbank'.",
+      "expectations": [
+        "Does not calque 'blocks on' as 'blockiert auf'",
+        "Uses 'Datenbank', not 'Datenbestand'",
+        "German dash typography"
+      ],
+      "assertions": [
+        {"type": "must_not", "pattern": "(?i)blockiert auf"},
+        {"type": "must_not", "pattern": "(?i)datenbestand"},
+        {"type": "must_not", "pattern": "—"}
+      ]
+    },
+    {
+      "id": 20,
+      "prompt": "kurzer jira-kommentar auf deutsch: der flaky behat-test ist jetzt stabil, die fixture war das problem, MR !1201 ist gemergt",
+      "expected_output": "Short German Jira comment. Uses 'flaky' or 'instabil' (never 'flatterhaft'), 'der MR' (masculine), test verbs 'läuft durch'/'ist grün' (not 'der Test besteht').",
+      "expectations": [
+        "Never 'flatterhaft' for flaky",
+        "MR is masculine (der MR), never 'die Merge Request'",
+        "No 'der Test besteht' (use 'läuft durch'/'ist grün'/'ist stabil')"
+      ],
+      "assertions": [
+        {"type": "must_not", "pattern": "(?i)flatterhaft"},
+        {"type": "must_not", "pattern": "(?i)die Merge.?Request"},
+        {"type": "must_not", "pattern": "(?i)Test besteht"}
+      ]
     }
   ]
 }

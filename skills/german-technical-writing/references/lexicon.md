@@ -19,7 +19,7 @@ Table of technical terms with gender, preferred form, and usage notes. Use this 
 | re-throw | erneut werfen / rethrow | both | *rethrow* acceptable in code comments. |
 | stack trace | der Stacktrace | accepted loanword | plural: *die Stacktraces*. |
 | runtime error | der Laufzeitfehler | native | preferred over *Runtime Error*. |
-| compile error | der Kompilierungsfehler | native | *Compile-Fehler* accepted colloquially. |
+| compile error | der Kompilierfehler | native | *Kompilierungsfehler* also correct but longer; *Compile-Fehler* accepted colloquially. |
 | type error | der Typfehler | native | preferred. |
 | null pointer | der Nullpointer / NullPointerException | both | when quoting the Java exception, use the loanword. |
 | fatal error | der fatale Fehler / der schwerwiegende Fehler | native | *fataler Fehler* is dominant. |
@@ -33,17 +33,17 @@ Table of technical terms with gender, preferred form, and usage notes. Use this 
 | integration test | der Integrationstest | native | no hyphen; *der Integration-Test* also seen. |
 | functional test | der Funktionstest | native | |
 | end-to-end test / e2e test | der End-to-End-Test / der E2E-Test | accepted | |
-| fixture | die Fixture | accepted | plural: *die Fixtures*. |
+| fixture | die/das Fixture | accepted | plural: *die Fixtures*. Gender split (*das* by analogy with *das Feature*); pick one per text. |
 | mock | der Mock | accepted | verb: *mocken*. |
 | stub | der Stub | accepted | plural: *die Stubs*. |
 | spy | der Spy | accepted | plural: *die Spys / die Spies*. |
 | assertion | die Assertion | accepted | plural: *die Assertions*. |
-| test passes | der Test besteht | native | never *der Test passt*. |
-| test fails | der Test schlägt fehl / fällt durch | native | never *der Test failt*. |
+| test passes | der Test läuft durch / ist grün / geht durch | native | never *der Test passt*. Not *der Test besteht* — subjectless *bestehen* reads as "the test exists"; the code under test *besteht* the tests (*der Code besteht die Tests*), the test itself *läuft durch*. |
+| test fails | der Test schlägt fehl | native | *fällt durch* is colloquial. Written: *schlägt fehl*; chat: *failt* is widespread and tolerable there. |
 | skip | überspringen / skippen | both | written: *überspringen*; chat: *skippen*. |
 | test coverage | die Testabdeckung / die Test Coverage | both | |
 | regression | die Regression | accepted | plural: *die Regressionen*. |
-| flaky | flaky / instabil / flatterhaft | both | *flaky* dominant in team chat. |
+| flaky | flaky / instabil / unzuverlässig | both | *flaky* dominant in team chat; *wackelig* colloquial. NEVER *flatterhaft* — that describes a fickle person, not a test. |
 
 ## Version Control & Git
 
@@ -60,15 +60,15 @@ Table of technical terms with gender, preferred form, and usage notes. Use this 
 | revert (verb) | reverten / zurücknehmen / rückgängig machen | both | |
 | rename (noun) | der Rename / die Umbenennung | both | *Rename* widely accepted. |
 | rename (verb) | umbenennen / renamen | both | written: *umbenennen*; chat: *renamen*. |
-| pull request / MR | der Pull Request / der PR / der MR / die Merge Request | accepted | **In git.netresearch.de always use MR / Merge Request** (per team convention). |
+| pull request / MR | der Pull Request / der PR / der Merge Request / der MR | accepted | masculine — *Request* is *der* (never *die Merge Request*). **In git.netresearch.de always use MR / Merge Request** (per team convention). |
 | push | pushen | accepted | |
-| pull | pullen / abholen | both | |
-| fetch | fetchen / abholen | both | |
-| checkout | auschecken / checkouten / auf X wechseln | both | *auf X wechseln* most native. |
+| pull | pullen | accepted | *abholen* reads as translation German — devs say *pullen*. |
+| fetch | fetchen | accepted | same — *abholen* uncommon in dev speech. |
+| checkout | auschecken / auf X wechseln | both | *auf X wechseln* most native; *checkouten* clunky, avoid. |
 | diff | der Diff | accepted | |
 | conflict | der Konflikt | native | |
 | reset | der Reset / zurücksetzen | both | |
-| blame | blamen / blame (Tool-Name) | accepted | usually just *git blame* as tool-call. |
+| blame | git blame (Tool-Name) | accepted | *ein git blame machen* / *git-blamen*. Never bare *blamen* — collides with *sich blamieren* (to embarrass oneself). |
 
 ## CI / CD / Build
 
@@ -76,7 +76,7 @@ Table of technical terms with gender, preferred form, and usage notes. Use this 
 |---|---|---|---|
 | pipeline | die Pipeline | accepted | plural: *die Pipelines*. |
 | build (noun) | der Build | accepted | plural: *die Builds*. |
-| deploy (noun) | das Deploy / das Deployment | accepted | |
+| deploy (noun) | das Deployment / der/das Deploy | accepted | gender of *Deploy* unstable — both attested; pick one per text. |
 | deploy (verb) | deployen / ausrollen | both | |
 | apply (verb) | ausrollen / anwenden / ausführen | native | Terraform/CI: *den Plan ausrollen*. NOT *applyen* / *ich applye*. |
 | apply (noun) | der Apply / der Apply-Job | accepted | the CI job. plural: *die Applies* / *die Apply-Jobs*. |
@@ -89,7 +89,7 @@ Table of technical terms with gender, preferred form, and usage notes. Use this 
 | hotfix | der Hotfix | accepted | |
 | patch | der Patch | accepted | |
 | feature flag | das Feature Flag / der Feature-Schalter | accepted | |
-| canary | das Canary / das Canary-Release | accepted | |
+| canary | das Canary-Release / das Canary-Deployment | accepted | standalone *das Canary* uncommon — use the compound. |
 | smoke test | der Smoke-Test | accepted | |
 
 ## HTTP / APIs
@@ -99,7 +99,7 @@ Table of technical terms with gender, preferred form, and usage notes. Use this 
 | request | der Request | accepted | plural: *die Requests*. |
 | response | die Response | accepted | plural: *die Responses*. |
 | endpoint | der Endpoint / der Endpunkt | both | |
-| payload | das Payload | accepted | |
+| payload | die/das Payload | accepted | gender unstable — *die* (die Nutzlast) at least as common as *das*; pick one per text. |
 | header | der Header | accepted | |
 | body | der Body | accepted | |
 | query param | der Query-Parameter | accepted | |
@@ -112,7 +112,7 @@ Table of technical terms with gender, preferred form, and usage notes. Use this 
 
 | EN | DE | Register | Notes |
 |---|---|---|---|
-| component | die Komponente / das Component | both | native preferred. |
+| component | die Komponente | both | native preferred; as loanword *die Component* (feminine like *die Komponente*). |
 | render | rendern | accepted | |
 | hook | der Hook | accepted | |
 | state | der State / der Zustand | both | React-Kontext: *State*; allgemein: *Zustand*. |
@@ -139,7 +139,7 @@ Table of technical terms with gender, preferred form, and usage notes. Use this 
 | rollback (DB) | der Rollback | accepted | |
 | commit (DB) | der Commit | accepted | |
 | session | die Session / die Sitzung | both | |
-| token | der Token | accepted | |
+| token | der/das Token | accepted | both widespread (*das Token* very common in auth contexts); pick one per text. |
 | serialize | serialisieren | native | |
 | deserialize | deserialisieren | native | |
 
@@ -159,7 +159,7 @@ Table of technical terms with gender, preferred form, and usage notes. Use this 
 | inheritance | die Vererbung | native | |
 | composition | die Komposition | native | |
 | dependency | die Abhängigkeit / die Dependency | both | native usually preferred in formal docs. |
-| injection | die Injektion / das Injecten | accepted | |
+| injection | die Dependency Injection / die Injektion | accepted | verb: *injizieren*. Never *das Injecten*. |
 | refactoring | das Refactoring | accepted | *Refaktorierung* sounds bureaucratic. |
 | bug | der Bug | accepted | |
 | feature | das Feature | accepted | |
@@ -184,18 +184,29 @@ Table of technical terms with gender, preferred form, and usage notes. Use this 
 | to extend | erweitern | |
 | to refactor | refactoren / umgestalten | |
 | to debug | debuggen | |
-| to profile | profilen / das Profiling durchführen | |
+| to profile | ein Profiling machen / profilieren (Messung) | bare *profilen* is awkward (collides with *sich profilieren*); usually rephrased via the noun. |
 | to optimize | optimieren | |
-| to deprecate | als veraltet markieren / deprecaten | |
+| to deprecate | deprecaten / als deprecated markieren | *als veraltet markieren* reads as stiff paraphrase in dev register — keep the loanword. Participle *deprecatet* only in loose-register texts; in formal artifacts use *als deprecated markiert*. |
 | to document | dokumentieren | |
 
 ## Articles for ambiguous loanwords
 
 These get mistakes most often. Fix the article first:
 
-- **der** Commit, **der** Rebase, **der** Merge, **der** Branch, **der** Build, **der** Bug, **der** Fix, **der** Patch, **der** Hook, **der** Mock, **der** Stub, **der** Wrapper, **der** Decorator, **der** Provider, **der** Service, **der** Controller, **der** Token, **der** Header, **der** Callback, **der** Listener, **der** State, **der** Request, **der** Endpoint, **der** Cache, **der** Index, **der** Timeout (or *das*), **der** Retry, **der** Apply, **der** Apply-Job
-- **die** Pipeline, **die** Exception, **die** Fixture, **die** Assertion, **die** Response, **die** Session, **die** Migration, **die** Query, **die** Prop, **die** Factory, **die** Komponente, **die** Schnittstelle
-- **das** Interface, **das** Feature, **das** Event, **das** Ticket, **das** Issue, **das** Template, **das** Deployment, **das** Staging, **das** Logging, **das** Monitoring, **das** Framework, **das** Caching, **das** Routing, **das** Rendering, **das** Payload, **das** Refactoring, **das** Repository, **das** Schema
+- **der** Commit, **der** Rebase, **der** Merge, **der** Branch, **der** Build, **der** Bug, **der** Fix, **der** Patch, **der** Hook, **der** Mock, **der** Stub, **der** Wrapper, **der** Decorator, **der** Provider, **der** Service, **der** Controller, **der** Header, **der** Callback, **der** Listener, **der** State, **der** Request, **der** Merge Request, **der** Endpoint, **der** Cache, **der** Index, **der** Retry, **der** Apply, **der** Apply-Job, **der** Stack-Frame
+- **die** Pipeline, **die** Exception, **die** Assertion, **die** Response, **die** Session, **die** Migration, **die** Query, **die** Prop, **die** Factory, **die** Komponente, **die** Schnittstelle, **die** Callsite, **die** Baseline
+- **das** Interface, **das** Feature, **das** Event, **das** Ticket, **das** Issue, **das** Template, **das** Deployment, **das** Staging, **das** Logging, **das** Monitoring, **das** Framework, **das** Caching, **das** Routing, **das** Rendering, **das** Refactoring, **das** Repository, **das** Schema
+- Genuinely unstable — both attested, pick one and stay consistent within a text: **der/das** Timeout, **der/das** Token, **der/das** Deadlock, **der/das** Deploy, **die/das** Payload, **die/das** Fixture, **der/das** Breaking Change
+
+Morphology shortcut: *-ing*/*-ment* nominalizations are always **das** (das Refactoring, das Deployment, das Logging); person nouns take natural gender (der/die Admin).
+
+## Plural & case of loanwords
+
+- Default plural is *-s*: die Commits, die Branches, die Deployments.
+- *-y* just takes *-s*, no y→ies: die Proxys, die Librarys (or use *die Libraries* as full English plural — never mix).
+- *-er* loans follow the German zero plural: die Server, die Manager, die Listener (never *die Servers*).
+- Loanwords inflect like German nouns: *des Servers*, *auf diesen Servern*, *dem Branch*.
+- Genitive: plain *-s* where valid (*des Commits*, *des Builds*); never an English apostrophe-s (*Sebastians Branch*, not *Sebastian's Branch*).
 
 ## Debugging / Postmortem / Analysis
 
@@ -206,9 +217,9 @@ These are the terms most prone to the calque-overcorrection trap. Native German 
 | root cause | die Root Cause | accepted loanword | NEVER *Wurzelursache* (calque) or *Hauptursache* (works in formal text but uncommon in dev). Postmortems, code reviews, Jira: *Root Cause* verbatim. Plural: *die Root Causes*. |
 | root-cause analysis | die Root-Cause-Analyse | accepted | Hyphenated compound. *Wurzelursachen-Analyse* is wrong. |
 | caller | der Caller | accepted | Stack-trace + debugging context. *Aufrufer* technically correct but stilted in dev jargon. |
-| callsite / call site | der Callsite / die Aufrufstelle | both | Loanword dominant; native form acceptable in formal docs. |
+| callsite / call site | die Callsite / die Aufrufstelle | both | feminine (*die Website*, *die Stelle*). Loanword dominant; native form acceptable in formal docs. |
 | call stack | der Call Stack / der Aufruf-Stack | both | |
-| stack frame | das Stackframe / der Stack-Frame | accepted | |
+| stack frame | der Stack-Frame | accepted | masculine — *der Frame* (der Rahmen). |
 | edge case | der Edge Case | accepted loanword | NEVER *Randfall* in software-engineering register. *Randfall* belongs to math/stats. Plural: *die Edge Cases*. |
 | corner case | der Corner Case | accepted | Same logic as Edge Case. |
 | code path | der Code-Pfad | accepted | *Ausführungspfad* possible but uncommon. |
@@ -216,7 +227,7 @@ These are the terms most prone to the calque-overcorrection trap. Native German 
 | happy path | der Happy Path | accepted | Already in `anti-patterns.md`. |
 | code path / execution path | der Code-Pfad | accepted | |
 | race condition | die Race Condition | accepted loanword | NEVER *Wettlaufbedingung* (academic-CS textbook). |
-| deadlock | das Deadlock | accepted | NEVER *Verklemmung*. |
+| deadlock | der/das Deadlock | accepted | gender unstable, *der* at least as common (*einen Deadlock*). NEVER *Verklemmung*. |
 | memory leak | das Memory Leak | accepted | NEVER *Speicherleck*. |
 | stack overflow | der Stack Overflow | accepted | NEVER *Stapelüberlauf*. |
 | garbage collection | die Garbage Collection / GC | accepted | NEVER *Müllabfuhr*. *Speicherbereinigung* is academic. |
@@ -225,7 +236,7 @@ These are the terms most prone to the calque-overcorrection trap. Native German 
 | trace | der Trace | accepted | |
 | trace logging | das Trace-Logging | accepted | |
 | stack trace | der Stacktrace / der Stack-Trace | accepted | Already in Exceptions section. |
-| reproducer / repro | der Reproducer / das Repro | accepted | NEVER *Reproduktionsbeispiel*. |
+| reproducer / repro | der Reproducer | accepted | NEVER *Reproduktionsbeispiel*. *Repro* rare in German dev speech, gender unsettled — prefer *Reproducer*. |
 | postmortem | das Postmortem | accepted | |
 | breaking change | das Breaking Change / der Breaking Change | accepted | Gender unstable; both attested. NEVER *brechende Änderung*. |
 | dry-run | der Dry-Run | accepted | NEVER *Trockenlauf* (mechanical-engineering term). |

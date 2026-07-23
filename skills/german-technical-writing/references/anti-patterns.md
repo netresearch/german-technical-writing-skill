@@ -14,7 +14,7 @@ Search by English concept or by the wrong-form you're tempted to write. Each row
 | catch | fangen / catchen | abfangen | Bare *fangen* means "catch" in the animal/ball sense. Exceptions get *abgefangen* (the *ab-* prefix is not optional). |
 | code breaks | brechen (alone) | fehlschlagen / abbrechen / eine Exception werfen | Code does not *brechen*; a process can *abbrechen* (abort) or *scheitern*, a call can *fehlschlagen*. |
 | trigger error | triggern | auslösen | *Triggern* exists colloquially but sounds amateurish in written tech prose. *Auslösen* is the canonical verb. |
-| hit an error | hitten / auf Fehler hitten | auf einen Fehler stoßen / einen Fehler treffen | *Hitten* is pure Denglisch. *Auf X stoßen* is idiomatic. |
+| hit an error | hitten / auf Fehler hitten | auf einen Fehler stoßen | *Hitten* is pure Denglisch. *Auf X stoßen* is idiomatic; *einen Fehler treffen* is itself a calque. |
 | raise an exception | anheben | werfen / auslösen | German has no "raise" idiom for exceptions; collapse to *werfen*. |
 | handle error | handeln | behandeln | *Handeln* means "to act/trade"; errors get *behandelt*. |
 | recover from | erholen von | sich erholen von / zurückkehren aus | Technical contexts prefer *nach einem Fehler zurückkehren* or *sich erholen* (reflexive, not bare). |
@@ -23,8 +23,8 @@ Search by English concept or by the wrong-form you're tempted to write. Each row
 
 | EN | ❌ | ✅ | Why |
 |---|---|---|---|
-| test passes | passt | besteht / geht durch | *Passen* = to fit. Tests *bestehen*. |
-| test fails | failt / failed | schlägt fehl / fällt durch | *Failen* is pure anglicism; *fällt durch* mirrors exam language. |
+| test passes | passt / besteht | läuft durch / geht durch / ist grün | *Passen* = to fit. *Der Test besteht* reads as "the test exists" (the code *besteht* the tests, not the test itself). |
+| test fails | failt / failed | schlägt fehl | *Failen* is pure anglicism in written artifacts (tolerable in chat); *fällt durch* colloquial. |
 | test is green / red | grün / rot (OK) | grün / rot | This usage is accepted. |
 | build fails | Build failt | Build schlägt fehl / bricht ab | Build *schlägt fehl* or *bricht ab*; never *failt*. |
 | caught by tests | gefangen | erkannt / aufgedeckt / abgefangen | *Gefangen* = captured (in the prisoner sense). Tests *erkennen* or *decken auf*. |
@@ -59,20 +59,58 @@ Search by English concept or by the wrong-form you're tempted to write. Each row
 | rename | renamen | umbenennen / renamen (colloquial) | *Renamen* acceptable in chat; written form prefers *umbenennen*. *Ein Rename* as noun is widely accepted. |
 | checkout | auschecken / checkouten (OK) | auschecken / auf X wechseln | Accepted. |
 | push | pushen (OK) | pushen | Accepted. |
-| pull | pullen / ziehen (OK) | pullen / abholen | Accepted; *abholen* slightly dated. |
+| pull | pullen / ziehen (OK) | pullen | Accepted loanword; *abholen* reads as translation German, not dev speech. |
 
 ## Nouns & Adjectives
 
 | EN | ❌ | ✅ | Why |
 |---|---|---|---|
 | the test | die Test | der Test | Gender mistake — *der Test* (masc). |
-| bare X | ein bare X | ein unqualifiziertes X / ein nacktes X | *Bare* is not a German adjective. |
+| bare X | ein bare X | ein unqualifiziertes X | *Bare* is not a German adjective; *ein nacktes X* only colloquially. |
 | vanilla (default) | vanilla | unverändert / Standard- | Calque; in tech contexts *unverändert* works. |
 | low-hanging fruit | niedrig hängende Frucht / low-hanging Fruit | leicht erreichbare Verbesserung / einfache Gewinne | Dead metaphor in German; prefer description. |
 | end of the day | am Ende des Tages (as idiom) | letztlich / am Ende / unter dem Strich | *Am Ende des Tages* as idiom is calqued; only use literally. |
 | on the same page | auf derselben Seite | einer Meinung / auf demselben Stand | Literal translation; cut it. |
 | nice to have | nice-to-have (OK) | wünschenswert / angenehm, aber optional | Accepted loanword; pure form less stilted than calque. |
-| happy path | happy path (OK) | Glücksfall / Normalfall / Standardablauf | Accepted loanword in design contexts. |
+| happy path | Glückspfad / Glücksfall | der Happy Path | Accepted loanword — keep it English (see compound-calque table below). *Glücksfall* means a lucky break, not a code path. |
+
+## Collocation & preposition calques (the „blockiert auf" trap)
+
+The subtlest failure mode: every word is German, but the verb+preposition or verb+object pairing is mapped 1:1 from English. Natives read these as machine output even when they can't name why. Check the German collocation, never transfer the English preposition.
+
+| EN pattern | ❌ Calque | ✅ Natural | Why |
+|---|---|---|---|
+| blocks on X | blockiert auf X | wartet auf X / wird durch X blockiert / hängt an X | *blockieren auf* does not exist in German. |
+| runs into timeouts | läuft in Timeouts | es kommt zu Timeouts / läuft in einen Timeout | plural *in Timeouts laufen* is Denglisch; the singular idiom is marginal, *es kommt zu* is safe. |
+| traffic occurs / there is traffic | Traffic entsteht | es gibt genug Traffic / genug Last kommt zusammen | *entstehen* doesn't collocate with Traffic/Last. |
+| produce this timing | dieses Timing erzeugen | dieses Timing treffen / sich zeitlich überschneiden | timing isn't *erzeugt*; describe the overlap. |
+| run closely together | eng nebeneinander laufen | zeitlich eng ineinandergreifen / sich zeitlich überschneiden | parallel processes don't run *nebeneinander* in German. |
+| assertion on X | die Assertion auf X | die Prüfung von X / die Assertion, dass … | *auf* is the English *on*; rephrase. |
+| silently swallows | stillschweigend verschluckt | verschluckt / unterdrückt | *verschlucken* is already silent — *stillschweigend* doubles it. |
+| marked as deprecated | als veraltet markiert | deprecatet / als deprecated markiert | stiff paraphrase; dev register keeps the loanword. |
+| the right fix | der richtige Fix | der eigentliche Fix / der saubere Fix | *richtig* implies the workaround was *wrong* rather than provisional. |
+| migrate to X | auf/nach X migrieren | zu X migrieren | |
+| compatible with X | kompatibel zu X | kompatibel mit X | |
+| integration with X | die Integration mit X | die Integration in X | |
+| change X to Y | X auf Y ändern | X in Y ändern | |
+| on the internet/web | auf dem Internet/Web | im Internet / im Web | |
+| report to sb. | an jdn. berichten | jdm. berichten | dative, no preposition. |
+
+## Idiom & discourse calques
+
+| EN | ❌ Calque | ✅ Fix | Why |
+|---|---|---|---|
+| makes sense | macht Sinn | ist sinnvoll / ergibt Sinn | *Sinn machen* still marked in written register; *ist sinnvoll* is safest. |
+| in 2026 | in 2026 | 2026 / im Jahr 2026 | German drops the preposition with bare years. High-frequency error. |
+| address a problem | ein Problem adressieren | angehen / lösen / behandeln | *adressieren* = to put an address on something. |
+| realize (notice) | realisieren, dass | merken / feststellen, dass | German *realisieren* = to implement/make real. |
+| I'm fine with it | Ich bin fein damit | passt für mich / einverstanden | pure calque. |
+| no idea | keine Idee | keine Ahnung | *Idee* = a creative idea, not ignorance. |
+| it takes two X | es braucht zwei X | dafür sind zwei X nötig | rising anglicism, still marked in written register. |
+| once more | einmal mehr | erneut / wieder einmal | |
+| do a good job | einen guten Job machen | gute Arbeit leisten | (*einen guten Job machen* is common speech, marked in writing) |
+| for several minutes | für mehrere Minuten | mehrere Minuten lang | *für* + duration is English. |
+| billion | die Billion (as 10⁹) | die Milliarde | German *Billion* = 10¹². Numeric error, not style. |
 
 ## Sentence structure
 
@@ -135,14 +173,32 @@ If a native German developer would *say* the term verbatim in a code review or s
 
 **Align to the product's German UI** — the same litmus from the other side. When a tool ships a German interface, use *its* term, not the English word you would say in English. Confluence: *Entwurf* (not „Draft"), *Veröffentlichen* / *veröffentlichen* (not „publizieren"). And avoid vague English umbrella-nouns where a precise German term is standard — *Schnittstelle* / *Anbindung*, not „Connector". A German user of the German UI says „Entwurf", so „Draft" reads as untranslated: here the loanword is *not* the verbatim term, the German one is.
 
-### Two opposite errors — keep them straight
+## Amtsdeutsch over-polish (the „Datenbestand" trap)
 
-This file catalogues **two distinct failure modes**, and over-applying one drives you into the other:
+The third failure mode: avoiding anglicisms so hard that the text lands in bureaucratic officialese no developer writes. Grammatically perfect, register-dead. The fix is always the plain dev word or an active verb.
+
+| ❌ Amtsdeutsch | ✅ Dev register | Why |
+|---|---|---|
+| der Datenbestand | die Datenbank / die DB | *Datenbestand* is Behördensprache. |
+| In dieser Konstellation | dann / in dem Fall | |
+| Es handelt sich um X | Das ist X / just name X | translation filler ("it is a matter of"). |
+| Zu beachten ist, dass X | state X directly, or *Achtung:* | instruction-manual German. |
+| perspektivisch | langfristig / später | consultant buzzword. |
+| Die Prüfung erfolgt durch X / X wird einer Prüfung unterzogen | X prüft | Funktionsverbgefüge — use the verb. Same for *zur Anwendung bringen* → *anwenden*, *zum Einsatz kommen* → *einsetzen*, *eine Durchführung erfolgt* → any active verb. |
+| partiell / obsolet (as filler formality) | teilweise / veraltet | plain word over formal word when both fit. |
+| Unterstützung bieten | unterstützen / helfen | |
+
+Deliberately idiomatic dev speech is *welcome*, not a violation: *sich ins Gehege kommen*, *der Speicher läuft voll*, *das fliegt in den Unit-Tests auf*, *läuft eh knapp am Limit*, *den Cache wegziehen*. Sterilizing these into formal German makes text read more machine-written, not less.
+
+### Three failure modes — keep them straight
+
+This file catalogues **three distinct failure modes**, and over-applying one drives you into another:
 
 1. **Anglicism (verbs):** keeping English when German is canonical. *Test failt* → *schlägt fehl*. *Fehler triggern* → *Fehler auslösen*. The verb tables above target this.
-2. **Calque (compound nouns):** translating English when the loanword is canonical. *Wurzelursache* → *Root Cause*. *Wettlaufbedingung* → *Race Condition*. The compound-calque table above targets this.
+2. **Calque (compound nouns, collocations, idioms):** translating English word-by-word when the loanword or a different German structure is canonical. *Wurzelursache* → *Root Cause*. *blockiert auf* → *wartet auf*. The calque tables above target this.
+3. **Amtsdeutsch over-polish:** fleeing both traps into stiff officialese (*Datenbestand*, *Es handelt sich um*, Funktionsverbgefüge, passive chains). The table above targets this.
 
-Both disciplines apply simultaneously. Writers who absorb only the first drift into the second.
+All three disciplines apply simultaneously. Writers who absorb only the first drift into the second; writers who absorb the first two drift into the third.
 
 ## Pseudo-anglicisms to avoid
 
