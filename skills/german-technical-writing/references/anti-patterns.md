@@ -135,6 +135,36 @@ Empty throat-clearing that prefaces a statement by asserting its own sincerity, 
 
 Applies in chat to colleagues too, not only in formal artifacts — and the English originals are just as unwelcome, so do not fall back to *"to be honest, …"* either.
 
+## Hollow antithesis (the „X, nicht Y" trap)
+
+A statement followed by the negation of an alternative that was never in question.
+Rhetorically an *Antithese*; where the positive half is already unambiguous it is also
+a *Pleonasmus*, because the second half excludes nothing. The surface forms are
+„X, nicht Y" and „nicht X, sondern Y", and they are among the most reliable tells of
+machine-written prose.
+
+| ❌ | ✅ | Why |
+|---|---|---|
+| „deine Arbeit, nicht meine" | „Die Commits stammen von dir." | *Deine* already excludes *meine*. |
+| „Das ist ein Fehler, kein Feature." | „Das ist ein Fehler." | Nobody proposed *Feature*. |
+| „Ich habe es gemessen, nicht geschätzt." | „Gemessen über 100 gemergte MRs: …" | Replace the claim of rigour with the measurement. |
+
+**Why it creeps in:** the negation fends off an objection nobody raised, and the
+balanced pair *sounds* considered while carrying no additional thought. It is hedging
+disguised as precision — and it often drags the writer into a sentence that was about
+someone else.
+
+**Keep the construction only when the excluded alternative was genuinely on the
+table** — when a reader would otherwise land on it, or when it was the previous,
+wrong assumption:
+
+> ✅ „Die Ursache liegt im TER, nicht in tailor." — both had been suspected; naming
+> the loser *is* the finding.
+
+The test: delete the negated half. If nothing is lost, it was never doing work. When
+in doubt, cut it and spend the words on the positive statement instead — say who,
+what and why, rather than what it is not.
+
 ## Compound-noun calques (the "Wurzelursache" trap)
 
 These are the **opposite** of the verb-level anglicisms above. Writers who internalize "use German verbs" tend to over-correct and start *translating* English compound technical terms that should stay as loanwords. The result is grammatically perfect German that sounds like DeepL output to a native engineer because no German developer ever utters those translations.
@@ -173,6 +203,43 @@ If a native German developer would *say* the term verbatim in a code review or s
 
 **Align to the product's German UI** — the same litmus from the other side. When a tool ships a German interface, use *its* term, not the English word you would say in English. Confluence: *Entwurf* (not „Draft"), *Veröffentlichen* / *veröffentlichen* (not „publizieren"). And avoid vague English umbrella-nouns where a precise German term is standard — *Schnittstelle* / *Anbindung*, not „Connector". A German user of the German UI says „Entwurf", so „Draft" reads as untranslated: here the loanword is *not* the verbatim term, the German one is.
 
+### Identifiers are values, not vocabulary
+
+The decision rule above sorts words into "keep the loanword" and "use the German
+term". Machine-readable strings belong to neither: field names, API values, status
+constants, flags, exit codes, branch names. They are quoted material, and translating
+one invents something the system never emits — the reader who searches for it finds
+nothing.
+
+Set them as values, in code style, and let the German sentence carry the meaning
+around them:
+
+| ❌ | ✅ | Why |
+|---|---|---|
+| „CLEAN, 20 Checks bestanden" | „`mergeStateStatus: CLEAN`, 20 Prüfungen bestanden" | `CLEAN` is a GitHub field value; „Checks" is an everyday word with *Prüfungen* ready to hand. Translating the value would produce a state the API has no name for. |
+| „der Job ist FAILED" | „der Job steht auf `failed`" | The value stays literal, the sentence supplies the grammar. |
+| „setze das Flag auf WAHR" | „setze `--force` auf `true`" | Neither the flag nor its value is German vocabulary. |
+
+The two errors are opposite and both easy: dropping an English word in where German
+has a plain one (*Checks*, *Threads*, *Head*), and translating a literal that has to
+stay verbatim.
+
+### Do not invent a metaphor where a plain word exists
+
+The Amtsdeutsch trap below is over-translation into officialese. Its livelier cousin
+is over-*translation into imagery*: coining a vivid German word for a technical term
+because the literal rendering feels flat. The coinage carries associations the subject
+does not have, and no reader can look it up.
+
+Observed: „Torlage" for a merge gate — built from *Tor* = gate, but *Torlage* in German
+is a scoring chance in football. It was used repeatedly in status reports before anyone
+asked what it meant. „Alle Bedingungen fürs Zusammenführen" says it and needs no
+decoding.
+
+If a term has no established German form, use the English one or describe the thing in
+ordinary words. Invention is the one option that leaves the reader worse off than
+either.
+
 ## Amtsdeutsch over-polish (the „Datenbestand" trap)
 
 The third failure mode: avoiding anglicisms so hard that the text lands in bureaucratic officialese no developer writes. Grammatically perfect, register-dead. The fix is always the plain dev word or an active verb.
@@ -190,13 +257,14 @@ The third failure mode: avoiding anglicisms so hard that the text lands in burea
 
 Deliberately idiomatic dev speech is *welcome*, not a violation: *sich ins Gehege kommen*, *der Speicher läuft voll*, *das fliegt in den Unit-Tests auf*, *läuft eh knapp am Limit*, *den Cache wegziehen*. Sterilizing these into formal German makes text read more machine-written, not less.
 
-### Three failure modes — keep them straight
+### Four failure modes — keep them straight
 
-This file catalogues **three distinct failure modes**, and over-applying one drives you into another:
+This file catalogues **four distinct failure modes**, and over-applying one drives you into another:
 
 1. **Anglicism (verbs):** keeping English when German is canonical. *Test failt* → *schlägt fehl*. *Fehler triggern* → *Fehler auslösen*. The verb tables above target this.
 2. **Calque (compound nouns, collocations, idioms):** translating English word-by-word when the loanword or a different German structure is canonical. *Wurzelursache* → *Root Cause*. *blockiert auf* → *wartet auf*. The calque tables above target this.
 3. **Amtsdeutsch over-polish:** fleeing both traps into stiff officialese (*Datenbestand*, *Es handelt sich um*, Funktionsverbgefüge, passive chains). The table above targets this.
+4. **Translating what has to stay literal:** field names, API values, flags and status constants are quoted material, not vocabulary — rendering `CLEAN` as *FERTIG* names a state the system never emits. „Identifiers are values, not vocabulary" above targets this, together with its twin, inventing imagery (*Torlage*) where a plain description would do.
 
 All three disciplines apply simultaneously. Writers who absorb only the first drift into the second; writers who absorb the first two drift into the third.
 
