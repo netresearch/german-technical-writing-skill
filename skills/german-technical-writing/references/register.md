@@ -135,7 +135,7 @@ Before posting any German artifact longer than one sentence, read through it onc
 5. ☐ Is every sentence under 25 words — and do sentence lengths vary?
 6. ☐ Are compound nouns split at ≤3 elements or with prepositions beyond that?
 7. ☐ Are ß/ä/ö/ü intact, quotes German („…“), dashes – not —?
-8. ☐ Does any sentence contain a calqued English idiom ("am Ende des Tages", "low-hanging fruit", "auf derselben Seite")?
+8. ☐ Does any sentence contain a calqued English idiom ("am Ende des Tages", "low-hanging fruit", "auf derselben Seite", "es steht auf dir")?
 9. ☐ If bullet points: are they in parallel grammatical form?
 10. ☐ Any English-calque filler / meta-commentary („ehrlich gesagt", „um ehrlich zu sein", „wie gesagt" as filler, „to be honest")? Cut it — state the fact directly.
 11. ☐ Is every fact and mechanism stated exactly once, no summary paragraph, one term per concept? (Full list: `typografie-rhythmus.md`)
