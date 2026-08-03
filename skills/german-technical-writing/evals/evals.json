@@ -307,8 +307,8 @@
         "Translates the everyday nouns: 'Prüfungen' for checks"
       ],
       "assertions": [
-        {"type": "content", "pattern": "CLEAN"},
-        {"type": "must_not", "pattern": "(?i)\\b(sauber|fertig)\\b,\\s*20"},
+        {"type": "content", "pattern": "`[^`]*CLEAN[^`]*`"},
+        {"type": "must_not", "pattern": "(?i)(sauber|fertig)[^`\\n]{0,20}\\b20\\b"},
         {"type": "content", "pattern": "(?i)(prüfung|überprüfung)"}
       ]
     },
