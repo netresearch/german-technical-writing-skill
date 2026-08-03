@@ -296,6 +296,35 @@
         {"type": "must_not", "pattern": "(?i)die Merge.?Request"},
         {"type": "must_not", "pattern": "(?i)Test besteht"}
       ]
+    },
+    {
+      "id": 21,
+      "prompt": "kurzer deutscher statusbericht zum merge request: mergeStateStatus steht auf CLEAN, 20 checks sind durchgelaufen, keine offenen review threads",
+      "expected_output": "German status report that quotes the machine-readable value verbatim in code style while translating the everyday nouns.",
+      "expectations": [
+        "Keeps CLEAN as a quoted field value (e.g. `mergeStateStatus: CLEAN`), never as a German adjective",
+        "Invents no German rendering of the API value (no SAUBER, no FERTIG)",
+        "Translates the everyday nouns: 'Prüfungen' for checks"
+      ],
+      "assertions": [
+        {"type": "content", "pattern": "`[^`]*CLEAN[^`]*`"},
+        {"type": "must_not", "pattern": "(?i)(sauber|fertig)[^`\\n]{0,20}\\b20\\b"},
+        {"type": "content", "pattern": "(?i)(prüfung|überprüfung)"}
+      ]
+    },
+    {
+      "id": 22,
+      "prompt": "formuliere für den kollegen: die beiden commits im worktree hat er selbst angelegt, ich habe dort nichts angefasst",
+      "expected_output": "States the attribution positively and explains the situation, without appending a negated alternative that excludes nothing.",
+      "expectations": [
+        "No trailing 'nicht meine' style negation after an already unambiguous 'deine'",
+        "Spends the words on substance instead: which commits, or why the writer had not seen them",
+        "Avoids the 'X, nicht Y' shape where the positive half already excludes the alternative"
+      ],
+      "assertions": [
+        {"type": "must_not", "pattern": "(?i),\\s*nicht mein"},
+        {"type": "must_not", "pattern": "(?i)nicht von mir, sondern"}
+      ]
     }
   ]
 }
