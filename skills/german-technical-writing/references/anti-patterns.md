@@ -71,6 +71,8 @@ Search by English concept or by the wrong-form you're tempted to write. Each row
 | low-hanging fruit | niedrig hängende Frucht / low-hanging Fruit | leicht erreichbare Verbesserung / einfache Gewinne | Dead metaphor in German; prefer description. |
 | end of the day | am Ende des Tages (as idiom) | letztlich / am Ende / unter dem Strich | *Am Ende des Tages* as idiom is calqued; only use literally. |
 | on the same page | auf derselben Seite | einer Meinung / auf demselben Stand | Literal translation; cut it. |
+| waiting on you / the ball is in your court | es steht auf dir / der PR steht auf dir | es liegt bei dir / du bist am Zug / der PR wartet auf dich | *Auf jemandem stehen* is not German — nothing stands *on* a person. Something *liegt bei* someone, or someone *ist am Zug*. |
+| it is on me / my turn | das ist mein Zug | ich bin am Zug / das liegt bei mir | *Am Zug sein* is the idiom; *mein Zug* alone reads as a train. |
 | nice to have | nice-to-have (OK) | wünschenswert / angenehm, aber optional | Accepted loanword; pure form less stilted than calque. |
 | happy path | Glückspfad / Glücksfall | der Happy Path | Accepted loanword — keep it English (see compound-calque table below). *Glücksfall* means a lucky break, not a code path. |
 
