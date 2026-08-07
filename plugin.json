@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "german-technical-writing",
+  "version": "1.3.1",
+  "description": "Natural German technical register for Jira comments and descriptions, internal German-language documentation, and team-chat messages",
+  "author": {
+    "name": "Netresearch DTT GmbH",
+    "url": "https://www.netresearch.de"
+  },
+  "repository": "https://github.com/netresearch/german-technical-writing-skill",
+  "license": "(MIT AND CC-BY-SA-4.0)"
+}
