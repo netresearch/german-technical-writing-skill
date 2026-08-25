@@ -226,17 +226,34 @@ The two errors are opposite and both easy: dropping an English word in where Ger
 has a plain one (*Checks*, *Threads*, *Head*), and translating a literal that has to
 stay verbatim.
 
-### Do not invent a metaphor where a plain word exists
+### Do not invent a term where a plain word or a sentence exists
 
-The Amtsdeutsch trap below is over-translation into officialese. Its livelier cousin
-is over-*translation into imagery*: coining a vivid German word for a technical term
-because the literal rendering feels flat. The coinage carries associations the subject
-does not have, and no reader can look it up.
+The Amtsdeutsch trap below is over-translation into officialese. Its cousin is
+over-*translation into invention*: minting a German term for a technical concept
+because the literal rendering feels flat, or because no established word exists. The
+coinage carries associations the subject does not have, or none at all, and no reader
+can look it up.
 
-Observed: „Torlage“ for a merge gate — built from *Tor* = gate, but *Torlage* in German
-is a scoring chance in football. It was used repeatedly in status reports before anyone
-asked what it meant. „Alle Bedingungen fürs Zusammenführen“ says it and needs no
-decoding.
+It comes in two shapes. The vivid one announces itself — a picture where none belongs
+is hard to miss on a re-read. The dry one does not: it looks like ordinary technical
+vocabulary, which is exactly what a self-check aimed at imagery lets through.
+
+**The vivid one.** „Torlage“ for a merge gate — built from *Tor* = gate, but *Torlage*
+in German is a scoring chance in football. It was used repeatedly in status reports
+before anyone asked what it meant. „Alle Bedingungen fürs Zusammenführen“ says it and
+needs no decoding.
+
+**The dry one.** „Intent-Defekt“ for a piece of code that did nothing while its comment
+claimed it protected something. Sober, technical-looking, built from two real words —
+and empty: it names no defect anyone can act on, and the reader's answer was „ich
+verstehe es nicht“. What it was standing in for took three plain sentences: *Der Code
+hat nicht getan, was der Kommentar behauptet. Das Ergebnis war trotzdem richtig. Falsche
+Beschreibung, kein falsches Verhalten.* Length is not the measure — those three
+sentences are readable, the one compound was not.
+
+Abstract compounds are the natural landing spot when a concept has no German name, and
+German makes them frictionless to build, so the urge is strongest exactly where the idea
+is hardest. That is the moment to write the sentence instead.
 
 If a term has no established German form, use the English one or describe the thing in
 ordinary words. Invention is the one option that leaves the reader worse off than
@@ -266,7 +283,7 @@ This file catalogues **four distinct failure modes**, and over-applying one driv
 1. **Anglicism (verbs):** keeping English when German is canonical. *Test failt* → *schlägt fehl*. *Fehler triggern* → *Fehler auslösen*. The verb tables above target this.
 2. **Calque (compound nouns, collocations, idioms):** translating English word-by-word when the loanword or a different German structure is canonical. *Wurzelursache* → *Root Cause*. *blockiert auf* → *wartet auf*. The calque tables above target this.
 3. **Amtsdeutsch over-polish:** fleeing both traps into stiff officialese (*Datenbestand*, *Es handelt sich um*, Funktionsverbgefüge, passive chains). The table above targets this.
-4. **Translating what has to stay literal:** field names, API values, flags and status constants are quoted material, not vocabulary — rendering `CLEAN` as *FERTIG* names a state the system never emits. „Identifiers are values, not vocabulary“ above targets this, together with its twin, inventing imagery (*Torlage*) where a plain description would do.
+4. **Translating what has to stay literal:** field names, API values, flags and status constants are quoted material, not vocabulary — rendering `CLEAN` as *FERTIG* names a state the system never emits. „Identifiers are values, not vocabulary“ above targets this, together with its twin, inventing a term (*Torlage*, *Intent-Defekt*) where a plain description would do.
 
 All four disciplines apply simultaneously. The first three form a chain of over-correction: writers who absorb only the first drift into the second, and those who absorb the first two drift into the third. The fourth is independent of that chain — it catches writers who have learned to translate well and then translate something that was never language to begin with.
 
