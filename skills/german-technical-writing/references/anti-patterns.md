@@ -228,14 +228,15 @@ stay verbatim.
 
 ### Do not invent a term where a plain word or a sentence exists
 
-The Amtsdeutsch trap below is over-translation into officialese. Its livelier cousin
-is over-*translation into invention*: minting a German term for a technical concept
+The Amtsdeutsch trap below is over-translation into officialese. Its cousin is
+over-*translation into invention*: minting a German term for a technical concept
 because the literal rendering feels flat, or because no established word exists. The
 coinage carries associations the subject does not have, or none at all, and no reader
 can look it up.
 
-It comes in two shapes, and the second is the one that slips through — because the
-self-check asks about imagery, and the second shape has none.
+It comes in two shapes. The vivid one announces itself — a picture where none belongs
+is hard to miss on a re-read. The dry one does not: it looks like ordinary technical
+vocabulary, which is exactly what a self-check aimed at imagery lets through.
 
 **The vivid one.** „Torlage“ for a merge gate — built from *Tor* = gate, but *Torlage*
 in German is a scoring chance in football. It was used repeatedly in status reports
