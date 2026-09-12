@@ -61,6 +61,12 @@ Search by English concept or by the wrong-form you're tempted to write. Each row
 | push | pushen (OK) | pushen | Accepted. |
 | pull | pullen / ziehen (OK) | pullen | Accepted loanword; *abholen* reads as translation German, not dev speech. |
 
+## Verbs — Betrieb & Wartung
+
+| EN | ❌ | ✅ | Why |
+|---|---|---|---|
+| take a snapshot | snapshotten / gesnapshottet | einen Snapshot anlegen / erstellen | *Der Snapshot* as a noun is current in German IT usage; the verb belongs to spoken shop talk and does not carry into formal technical prose, which is the register this skill governs. Duden lists neither (a search for *snapshot* returns only *Snapchat®*, read 2026-09-12), so the participle has no settled spelling — *gesnapshottet*, *gesnapshotet* and *gesnapshot* all appear, and a report that picks one reads as improvised. Take the construction the noun already gives you: *Snapshot angelegt*, *Snapshot erstellt*, *Snapshot gelöscht*. Same for the plural in a report: *drei Snapshots angelegt*, never *dreimal gesnapshottet*. |
+
 ## Nouns & Adjectives
 
 | EN | ❌ | ✅ | Why |
