@@ -65,7 +65,7 @@ Search by English concept or by the wrong-form you're tempted to write. Each row
 
 | EN | ❌ | ✅ | Why |
 |---|---|---|---|
-| take a snapshot | snapshotten / gesnapshottet | einen Snapshot anlegen / erstellen | *Der Snapshot* as a noun is established; the verb is not, and its participle (*gesnapshottet*) has no accepted spelling — which is the tell that the verb does not exist. German forms the action with the noun: *Snapshot angelegt*, *Snapshot erstellt*, *Snapshot gelöscht*. Same for the plural in a report: *drei Snapshots angelegt*, never *dreimal gesnapshottet*. |
+| take a snapshot | snapshotten / gesnapshottet | einen Snapshot anlegen / erstellen | *Der Snapshot* as a noun is current in German IT usage; the verb belongs to spoken shop talk and does not carry into formal technical prose, which is the register this skill governs. Duden lists neither (a search for *snapshot* returns only *Snapchat®*, read 2026-09-12), so the participle has no settled spelling — *gesnapshottet*, *gesnapshotet* and *gesnapshot* all appear, and a report that picks one reads as improvised. Take the construction the noun already gives you: *Snapshot angelegt*, *Snapshot erstellt*, *Snapshot gelöscht*. Same for the plural in a report: *drei Snapshots angelegt*, never *dreimal gesnapshottet*. |
 
 ## Nouns & Adjectives
 
