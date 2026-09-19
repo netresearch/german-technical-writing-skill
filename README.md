@@ -119,7 +119,7 @@ skills/german-technical-writing/
 │   ├── typografie-rhythmus.md      # Typography and the AI-rhythm tells
 │   ├── cognitive-accessibility.md  # Comprehension priority over brevity
 │   ├── no-editorializing.md        # Inform, don't sell
-│   └── examples.md                 # 8 paired real-world cases with annotations
+│   └── examples.md                 # 8 paired cases with annotations (Case 8 synthetic)
 └── evals/
     └── evals.json                  # 27 evals; newer entries carry self-check samples
 ```

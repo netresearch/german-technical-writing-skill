@@ -1,6 +1,6 @@
 # Examples — Bad vs. Good
 
-Real paired cases from past Jira tickets and team-chat announcements. Each pair shows the anglicism-laden original, the rewrite, and why the rewrite works.
+Paired cases from past Jira tickets and team-chat announcements, each showing the anglicism-laden original, the rewrite, and why the rewrite works. Case 8 is synthetic and marked as such.
 
 ## Case 1 — The opening incident
 

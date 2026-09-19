@@ -338,13 +338,15 @@
       "assertions": [
         {"type": "content", "pattern": "HMKG-2202"},
         {"type": "content", "pattern": "cpl_id"},
-        {"type": "must_not", "pattern": "(siehe oben|Letzteres)"}
+        {"type": "must_not", "pattern": "(siehe oben|Letzteres)"},
+        {"type": "must_not", "pattern": "\\bdies\\b"}
       ],
       "samples": {
         "passing": "h3. Stand HMKG-2202\n\nDer Merge-Job verhindert doppelte IDs weiterhin nicht. Der Nightly-Lauf erkennt sie über den Unique-Check auf {{cpl_id}} und bricht ab. Die Anforderung, bestehende Einträge vor Änderungen zu schützen, ist noch offen.",
         "failing": [
           "Dadurch ist das weiterhin möglich. Letzteres bleibt offen, siehe oben.",
-          "Der Job wurde angepasst. Damit gilt dies dort ebenfalls nicht."
+          "Der Job wurde angepasst. Damit gilt dies dort ebenfalls nicht.",
+          "In HMKG-2202 erkennt der Nightly-Lauf dies über den Unique-Check auf {{cpl_id}}."
         ]
       }
     },
@@ -360,13 +362,15 @@
       "assertions": [
         {"type": "content", "pattern": "NRS-4763"},
         {"type": "content", "pattern": "Unique-Check"},
+        {"type": "content", "pattern": "(Schutz bestehender Einträge|bestehende Einträge .*sch(ü|u)tzen)"},
         {"type": "must_not", "pattern": "\\bG[23]\\b"}
       ],
       "samples": {
         "passing": "In NRS-4763 läuft der Unique-Check bereits. Der Schutz bestehender Einträge vor Änderungen fehlt noch.",
         "failing": [
           "G2 ist erledigt, G3 offen.",
-          "Der erste Punkt läuft, der zweite noch nicht."
+          "Der erste Punkt läuft, der zweite noch nicht.",
+          "In NRS-4763 läuft der Unique-Check bereits, der Rest noch nicht."
         ]
       }
     },

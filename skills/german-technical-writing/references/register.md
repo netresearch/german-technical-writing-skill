@@ -147,6 +147,6 @@ Before posting any German artifact longer than one sentence, read through it onc
 9. ☐ If bullet points: are they in parallel grammatical form?
 10. ☐ Any English-calque filler / meta-commentary („ehrlich gesagt", „um ehrlich zu sein", „wie gesagt" as filler, „to be honest")? Cut it — state the fact directly.
 11. ☐ Is every mechanism explained once, no summary paragraph, one term per concept? (Full list: `typografie-rhythmus.md`)
-12. ☐ Does every *dies / damit / Letzteres / siehe oben* resolve without scrolling back, and did the shortening keep every condition, exception and hedge? Any self-minted abbreviation, any paraphrased ticket key or identifier? (`cognitive-accessibility.md`)
+12. ☐ Does every *dies / damit / Letzteres / siehe oben* resolve without scrolling back, and did the shortening keep every condition, exception, negation and hedge? Any self-minted abbreviation, any paraphrased ticket key or identifier? (`cognitive-accessibility.md`)
 
 If any check fails, fix it before posting.

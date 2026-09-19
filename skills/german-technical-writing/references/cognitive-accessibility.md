@@ -88,4 +88,4 @@ Decide ordinary style questions yourself. Never invent a missing fact. Ask only 
 
 ## Selbstcheck
 
-After composing: does any *dies / damit / Letzteres / siehe oben* have a referent the reader must search for? An abbreviation you minted yourself? A real identifier that got paraphrased? An idiom standing where a mechanism should be? A sentence whose subject you have to hunt for, short or not? A condition, exception or hedge that the shortening pass ate? A project-internal coinage used unintroduced, or a term glossed for people who coined it? If yes — fix before posting.
+After composing: does any *dies / damit / Letzteres / siehe oben* have a referent the reader must search for? An abbreviation you minted yourself? A real identifier that got paraphrased? An idiom standing where a mechanism should be? A sentence whose subject you have to hunt for, short or not? A condition, exception, negation or hedge that the shortening pass ate? A project-internal coinage or a term outside the reader's field used without one explanation at first use, or a term glossed for people who coined it? If yes — fix before posting.
