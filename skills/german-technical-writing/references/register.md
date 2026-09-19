@@ -104,13 +104,21 @@ Impersonal voice in specification sections; direct voice acceptable in how-to se
 
 ## Sentence Length
 
-German allows longer sentences than English, but technical prose in Jira contexts should stay **short**. Rule of thumb:
+German allows longer sentences than English, but technical prose in Jira contexts should stay **short**. Word count is the warning signal, not the check:
 
 - Ideal: 10–15 words per sentence
-- Acceptable: up to 25 words
-- Hard stop: 35+ words means split it
+- Above 25: look at the sentence
+- 35+: it almost certainly needs splitting
 
 The reason: Jira readers skim. Long Verbalketten-Sätze are where anglicisms hide because the writer loses the thread halfway through.
+
+The check itself is structural — three questions per sentence:
+
+1. Is it unambiguous who does what?
+2. Does each condition sit next to the statement it restricts?
+3. Must the reader hold several insertions or references in mind at once?
+
+*„Damit gilt dies dort ebenfalls nicht."* is six words and fails the first and third. A 30-word sentence that passes all three may stay. Details and the shortening rules that follow from this: `cognitive-accessibility.md`.
 
 ## Compound Nouns
 
@@ -132,12 +140,13 @@ Before posting any German artifact longer than one sentence, read through it onc
 2. ☐ Is every verb+preposition pairing a real German collocation („wartet auf", not „blockiert auf")?
 3. ☐ Is the tense Präsens-Indikativ (default) or justified Konjunktiv/Perfekt?
 4. ☐ Artifact: any first-person that should be impersonal? Chat: any impersonal/consultant-wir that should be „ich"?
-5. ☐ Is every sentence under 25 words — and do sentence lengths vary?
+5. ☐ Is every sentence unambiguous about who does what, with its conditions attached — whatever its length? (Over 25 words: check, don't split reflexively.)
 6. ☐ Are compound nouns split at ≤3 elements or with prepositions beyond that?
 7. ☐ Are ß/ä/ö/ü intact, quotes German („…“), dashes – not —?
 8. ☐ Does any sentence contain a calqued English idiom ("am Ende des Tages", "low-hanging fruit", "auf derselben Seite", "es steht auf dir")?
 9. ☐ If bullet points: are they in parallel grammatical form?
 10. ☐ Any English-calque filler / meta-commentary („ehrlich gesagt", „um ehrlich zu sein", „wie gesagt" as filler, „to be honest")? Cut it — state the fact directly.
-11. ☐ Is every fact and mechanism stated exactly once, no summary paragraph, one term per concept? (Full list: `typografie-rhythmus.md`)
+11. ☐ Is every mechanism explained once, no summary paragraph, one term per concept? (Full list: `typografie-rhythmus.md`)
+12. ☐ Does every *dies / damit / Letzteres / siehe oben* resolve without scrolling back, and did the shortening keep every condition, exception, negation and hedge? Any self-minted abbreviation, any paraphrased ticket key or identifier? (`cognitive-accessibility.md`)
 
 If any check fails, fix it before posting.

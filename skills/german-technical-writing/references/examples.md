@@ -1,6 +1,6 @@
 # Examples — Bad vs. Good
 
-Real paired cases from past Jira tickets and team-chat announcements. Each pair shows the anglicism-laden original, the rewrite, and why the rewrite works.
+Paired cases from past Jira tickets and team-chat announcements, each showing the anglicism-laden original, the rewrite, and why the rewrite works. Case 8 is synthetic and marked as such.
 
 ## Case 1 — The opening incident
 
@@ -169,6 +169,32 @@ Real paired cases from past Jira tickets and team-chat announcements. Each pair 
 - Plain *Datenbank*, no officialese
 - Relativized claim (*sollte … nicht mehr auftreten*)
 
+## Case 8 — Shortened until the reader has to reconstruct it (synthetic)
+
+**Bad (short, every rule on brevity satisfied):**
+
+> Der Merge-Job wurde angepasst. Dadurch ist das weiterhin möglich. G3 bleibt ebenfalls offen. Doppelte Einträge fliegen im Nightly auf. Damit gilt dies für den Import ebenfalls nicht.
+
+**Problems:**
+
+1. *„Dadurch"* — the antecedent is the change, but the statement is about what the change does *not* fix; the reader has to guess which of the two
+2. *„G3"* — an abbreviation minted by the writer; the requirement has a name, and the real key (HMKG-2202) is gone
+3. *„fliegen auf"* — the idiom stands where the mechanism belongs: which check, at what point, with what result
+4. *„Damit gilt dies … ebenfalls nicht"* — six words, three unresolvable references (*damit*, *dies*, *ebenfalls*)
+5. The restriction („nur bei Läufen mit Preisliste") fell out during shortening; the statement now reads as unconditional
+
+**Good:**
+
+> Der Merge-Job in HMKG-2202 ist angepasst, doppelte IDs verhindert er weiterhin nicht. Der Nightly-Lauf erkennt sie seit gestern über den Unique-Check auf `cpl_id` und bricht den Job ab – außer bei Läufen ohne Preisliste, dort greift der Check nicht. Die Anforderung, bestehende Einträge vor Änderungen zu schützen, ist damit noch offen; für den Import gilt sie unverändert.
+
+**Why it works:**
+
+- Longer, and no sentence needs a previous one to be understood
+- Ticket key and field name kept verbatim, no invented label
+- *erkennt … über den Unique-Check* names the mechanism the idiom had replaced
+- The exception survives the shortening pass
+- Each reference (*sie*, *damit*) points at the nearest candidate
+
 ## Meta-observation
 
 Across these cases, the repeating failure modes are:
@@ -179,5 +205,6 @@ Across these cases, the repeating failure modes are:
 4. **Untranslated adjectives** — *empty*, *silent*, *bare*, *flaky*, *green* — German has all of these, the writer just forgot to switch
 5. **Konjunktiv II for non-hypotheticals** — adding *würde* to soften when the sentence should be blunt Indikativ
 6. **Machine register despite correct German** — restatement padding, symmetric paragraphs, em-dashes, absolutist claims, Amtsdeutsch vocabulary (Case 7; full rules in `typografie-rhythmus.md`)
+7. **Shortened past the point of being readable** — unresolvable references, self-minted abbreviations, an idiom where the mechanism belongs, a dropped condition (Case 8; full rules in `cognitive-accessibility.md`)
 
-When reviewing your own German draft, scan for these six patterns specifically. One pass is usually enough.
+When reviewing your own German draft, scan for these seven patterns specifically. One pass is usually enough.
