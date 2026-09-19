@@ -14,9 +14,9 @@ Where a rule from another reference would cost a condition, an exception, a nega
 
 *dies*, *damit*, *dadurch*, *Letzteres*, *siehe oben* are usable only where the referent is the nearest plausible candidate. Otherwise repeat the term. Repeating four words is cheaper for the reader than scrolling back one screen — and in Jira, where comments are read out of order and quoted in isolation, the referent is often no longer on the page at all.
 
-❌ *„Dadurch ist das weiterhin möglich. G3 bleibt ebenfalls offen."*
+❌ *„Dadurch ist das weiterhin möglich. G3 bleibt ebenfalls offen.“*
 
-✅ *„Der automatische Merge verhindert keine doppelten IDs. Auch die Anforderung, bestehende Einträge vor Änderungen zu schützen, bleibt unerfüllt."*
+✅ *„Der automatische Merge verhindert keine doppelten IDs. Auch die Anforderung, bestehende Einträge vor Änderungen zu schützen, bleibt unerfüllt.“*
 
 The second version is longer and needs no back-reference.
 
@@ -27,13 +27,13 @@ The second version is longer and needs no back-reference.
 - **Explain once** — a mechanism, a cause, a design decision gets one full explanation, where it matters most.
 - **Repeat what a section needs to stand on its own** — the term, the ticket key, the one-clause context. A section that forces a jump backwards is the defect the brevity rule was meant to prevent.
 
-The test is not „steht das schon irgendwo", but „muss der Leser zurückspringen, um diesen Absatz zu verstehen".
+The test is not „steht das schon irgendwo“, but „muss der Leser zurückspringen, um diesen Absatz zu verstehen“.
 
 ## Erfundene Kürzel gibt es nicht
 
 *G2*, *Option B3*, *Variante 2* as labels for things that have names are the writer's shorthand, not the reader's. Use the speaking name (*die Merge-Guard-Anforderung*), or introduce the abbreviation once explicitly and only when it recurs often enough to earn the introduction.
 
-Real identifiers are the opposite case and stay verbatim: ticket keys (*NRS-4763*), MR/PR numbers, commit SHAs, field names, class names. Never paraphrase, renumber or „vereinfache" them away.
+Real identifiers are the opposite case and stay verbatim: ticket keys (*NRS-4763*), MR/PR numbers, commit SHAs, field names, class names. Never paraphrase, renumber or „vereinfache“ them away.
 
 ## Konkret schlägt bildhaft, wo etwas erklärt wird
 
@@ -41,15 +41,15 @@ Real identifiers are the opposite case and stay verbatim: ticket keys (*NRS-4763
 
 > Natürliches Deutsch ist erwünscht. Wo eine Aussage einen Fehler, eine Ursache, eine Handlung oder eine Entscheidung erklärt, haben konkrete Beschreibungen Vorrang vor Redewendungen.
 
-- ❌ *„Doppelte IDs fliegen damit auf."* — in the sentence that states what the test does
-- ✅ *„Der Test erkennt doppelte IDs."*
-- ✅ *„Der Speicher läuft voll"* — description of a symptom, nothing is replaced
+- ❌ *„Doppelte IDs fliegen damit auf.“* — in the sentence that states what the test does
+- ✅ *„Der Test erkennt doppelte IDs.“*
+- ✅ *„Der Speicher läuft voll“* — description of a symptom, nothing is replaced
 
 The question is never whether the wording is colloquial, but whether the idiom stands in place of information the reader needs: which component, which condition, which consequence.
 
 ## Satzbau prüfen, nicht Wörter zählen
 
-The 10–15 / 25 / 35 figures in `register.md` are a warning signal, not the check. A short sentence can be unreadable: *„Damit gilt dies dort ebenfalls nicht."* passes every word count and says nothing.
+The 10–15 / 25 / 35 figures in `register.md` are a warning signal, not the check. A short sentence can be unreadable: *„Damit gilt dies dort ebenfalls nicht.“* passes every word count and says nothing.
 
 Three questions per sentence:
 
@@ -76,8 +76,8 @@ Same facts for every audience, different amount of explanation. Never simplify t
 
 When shortening, conditions, exceptions, negations and hedges are the first things to fall out — and they are the load-bearing parts.
 
-- *„kann"* must not become *„wird"*, *„sollte nicht mehr auftreten"* must not become *„ist ausgeschlossen"* (see `typografie-rhythmus.md`, Aussagen über künftiges Verhalten).
-- *„außer bei … "*, *„nur wenn … "*, *„es sei denn … "* stay, even when the sentence then breaks the word budget.
+- *„kann“* must not become *„wird“*, *„sollte nicht mehr auftreten“* must not become *„ist ausgeschlossen“* (see `typografie-rhythmus.md`, Aussagen über künftiges Verhalten).
+- *„außer bei … “*, *„nur wenn … “*, *„es sei denn … “* stay, even when the sentence then breaks the word budget.
 - Keep measured fact, conclusion and assumption distinguishable. Where a statement is an assumption, it says so.
 
 Cut filler, self-praise and summaries that add nothing. Do not cut the qualifier.
