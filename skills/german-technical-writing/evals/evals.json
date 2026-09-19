@@ -325,6 +325,116 @@
         {"type": "must_not", "pattern": "(?i),\\s*nicht mein"},
         {"type": "must_not", "pattern": "(?i)nicht von mir, sondern"}
       ]
+    },
+    {
+      "id": 23,
+      "prompt": "schreib den Jira-Kommentar zu HMKG-2202 bitte kurz: der merge-job verhindert die doppelten ids nicht, das nightly erkennt sie über den unique check auf cpl_id, und die anforderung bestehende einträge vor änderungen zu schützen ist auch noch offen",
+      "expected_output": "German Jira comment in which every sentence is understandable without jumping back: the ticket key and the field name are kept verbatim, and no sentence leans on 'siehe oben' or 'Letzteres' to carry its referent.",
+      "expectations": [
+        "Keeps the real identifiers verbatim — ticket key HMKG-2202 and field cpl_id",
+        "Names what stays unfixed in words, not via a back-reference (no 'siehe oben', 'Letzteres', bare 'dies')",
+        "Each pronoun resolves to the nearest candidate in the same or previous sentence"
+      ],
+      "assertions": [
+        {"type": "content", "pattern": "HMKG-2202"},
+        {"type": "content", "pattern": "cpl_id"},
+        {"type": "must_not", "pattern": "(siehe oben|Letzteres)"}
+      ],
+      "samples": {
+        "passing": "h3. Stand HMKG-2202\n\nDer Merge-Job verhindert doppelte IDs weiterhin nicht. Der Nightly-Lauf erkennt sie über den Unique-Check auf {{cpl_id}} und bricht ab. Die Anforderung, bestehende Einträge vor Änderungen zu schützen, ist noch offen.",
+        "failing": [
+          "Dadurch ist das weiterhin möglich. Letzteres bleibt offen, siehe oben.",
+          "Der Job wurde angepasst. Damit gilt dies dort ebenfalls nicht."
+        ]
+      }
+    },
+    {
+      "id": 24,
+      "prompt": "kommentar auf NRS-4763: G2 (der Unique-Check) läuft, G3 (Schutz bestehender Einträge) noch nicht. bitte einmal sauber ausformuliert für die kollegen",
+      "expected_output": "German comment that drops the writer's ad-hoc labels G2/G3 in favour of the speaking names, while the real ticket key NRS-4763 survives unchanged.",
+      "expectations": [
+        "Does not reuse the invented labels G2 / G3 as if the reader knew them",
+        "Names both requirements by their speaking names (Unique-Check, Schutz bestehender Einträge)",
+        "Keeps the real ticket key NRS-4763 verbatim"
+      ],
+      "assertions": [
+        {"type": "content", "pattern": "NRS-4763"},
+        {"type": "content", "pattern": "Unique-Check"},
+        {"type": "must_not", "pattern": "\\bG[23]\\b"}
+      ],
+      "samples": {
+        "passing": "In NRS-4763 läuft der Unique-Check bereits. Der Schutz bestehender Einträge vor Änderungen fehlt noch.",
+        "failing": [
+          "G2 ist erledigt, G3 offen.",
+          "Der erste Punkt läuft, der zweite noch nicht."
+        ]
+      }
+    },
+    {
+      "id": 25,
+      "prompt": "fass für den ticket-kommentar zusammen: der check bricht den job ab, aber nur bei läufen mit preisliste — ohne preisliste greift er gar nicht. möglichst kurz",
+      "expected_output": "Short German summary that keeps the restricting condition. The exception is the load-bearing part and must survive the shortening; no absolute claim replaces it.",
+      "expectations": [
+        "The restriction (nur bei Läufen mit Preisliste / ohne Preisliste greift er nicht) is present",
+        "No datasheet absolutism such as 'damit ist … ausgeschlossen'",
+        "Brevity does not cost the condition"
+      ],
+      "assertions": [
+        {"type": "content", "pattern": "(außer|es sei denn|nur bei|nur wenn|sofern)"},
+        {"type": "content", "pattern": "Preisliste"},
+        {"type": "must_not", "pattern": "\\bausgeschlossen\\b"}
+      ],
+      "samples": {
+        "passing": "Der Check bricht den Job ab, aber nur bei Läufen mit Preisliste. Ohne Preisliste greift er nicht.",
+        "failing": [
+          "Der Check bricht den Job ab. Doppelte Einträge sind damit ausgeschlossen.",
+          "Der Check bricht den Job ab."
+        ]
+      }
+    },
+    {
+      "id": 26,
+      "prompt": "kurzer kommentar: das nightly findet die doppelten ids jetzt. bitte konkret schreiben welcher check das macht, das ist der unique-check auf cpl_id",
+      "expected_output": "German sentence that names the mechanism — which check, on which field, with what consequence — instead of the idiom 'fliegt auf'.",
+      "expectations": [
+        "Names the check and the field instead of an idiom standing in for them",
+        "Uses a concrete verb (erkennt / prüft / bricht ab) for what the check does",
+        "Field name cpl_id kept verbatim"
+      ],
+      "assertions": [
+        {"type": "content", "pattern": "(erkennt|prüft|meldet|bricht)"},
+        {"type": "content", "pattern": "cpl_id"},
+        {"type": "must_not", "pattern": "flieg(t|en) .*auf"}
+      ],
+      "samples": {
+        "passing": "Der Nightly-Lauf erkennt doppelte IDs über den Unique-Check auf {{cpl_id}} und bricht den Job ab.",
+        "failing": [
+          "Doppelte IDs fliegen im Nightly jetzt auf.",
+          "Das Nightly findet die Duplikate jetzt."
+        ]
+      }
+    },
+    {
+      "id": 27,
+      "prompt": "die gleiche erklärung nochmal für PM und QA im projekt-channel: zwei jobs schreiben gleichzeitig auf dieselbe zeile, deshalb der falsche preis. race condition halt",
+      "expected_output": "Same technical statement for a mixed audience: the established term stays, one short explanation is added for the readers who cannot be assumed to know it. No invented German rendering, no beginner-level rewrite.",
+      "expectations": [
+        "Keeps the established term 'Race Condition' rather than inventing a German equivalent",
+        "Adds one short explanation of what happens (gleichzeitiger Schreibzugriff), because the audience is not dev-only",
+        "The technical statement itself is unchanged — only the amount of explanation differs"
+      ],
+      "assertions": [
+        {"type": "content", "pattern": "Race Condition"},
+        {"type": "content", "pattern": "(gleichzeitig|zeitgleich|parallel)"},
+        {"type": "must_not", "pattern": "Wettlaufsituation"}
+      ],
+      "samples": {
+        "passing": "Zwei Jobs schreiben gleichzeitig auf dieselbe Zeile, deshalb der falsche Preis – eine Race Condition. Wer zuletzt schreibt, gewinnt.",
+        "failing": [
+          "Es liegt eine Wettlaufsituation vor.",
+          "Da ist ein Timing-Problem, deshalb der falsche Preis."
+        ]
+      }
     }
   ]
 }

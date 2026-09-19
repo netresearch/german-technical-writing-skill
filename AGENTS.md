@@ -12,8 +12,11 @@ Natural German technical register for Jira comments, internal German docs, and t
 │   │   ├── anti-patterns.md                # ~60 false-friends catalogue
 │   │   ├── lexicon.md                      # Technical term lexicon with gender
 │   │   ├── register.md                     # Tense/voice/person, artifact conventions
-│   │   └── examples.md                     # 6 paired bad-vs-good cases
-│   └── evals/evals.json                    # 15 trigger-eval queries with assertions
+│   │   ├── typografie-rhythmus.md          # Typography, AI-rhythm tells, Selbstcheck
+│   │   ├── cognitive-accessibility.md      # Comprehension priority over brevity
+│   │   ├── no-editorializing.md            # Inform, don't sell
+│   │   └── examples.md                     # 8 paired bad-vs-good cases
+│   └── evals/evals.json                    # 27 evals; newer entries carry self-check samples
 ├── .github/workflows/                      # CI: lint, security, release, eval-validate, harness-verify, auto-merge-deps
 ├── composer.json                           # type: ai-agent-skill
 ├── LICENSE-MIT, LICENSE-CC-BY-SA-4.0       # Dual license: code (MIT), prose (CC-BY-SA-4.0)
@@ -31,7 +34,8 @@ Skill triggers for German prose ≥ 1 sentence in German-audience artifacts: Jir
 - **Anti-pattern entry** → `skills/german-technical-writing/references/anti-patterns.md`. Required: English concept, ❌ literal form, ✅ preferred form, **why** the literal reads as anglicism.
 - **Lexicon entry** → `skills/german-technical-writing/references/lexicon.md`. Required: English term, preferred German form (with article), register tag, gotchas.
 - **Worked example** → `skills/german-technical-writing/references/examples.md`. New `## Case N` block with bad text, problems list, rewritten good text, and explanation. Drawn from real Jira history preferred over synthetic.
-- **Eval query** → `skills/german-technical-writing/evals/evals.json`. Each entry needs ≥ 2 expectations and ≥ 2 assertions per the validator.
+- **Eval query** → `skills/german-technical-writing/evals/evals.json`. Each entry needs ≥ 2 expectations and ≥ 2 assertions per the validator. Prefer adding `samples` (`passing` plus `failing[]`): the validator greps them with the grader's own flags, so an inverted or vacuous assertion fails locally instead of silently passing every answer.
+- **Comprehension rule** → `skills/german-technical-writing/references/cognitive-accessibility.md`. It outranks the brevity and variation rules in `typografie-rhythmus.md` and `register.md`; a change there that costs a condition, an exception or an unambiguous reference belongs in both files at once.
 
 ## Compatibility
 

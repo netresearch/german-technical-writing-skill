@@ -20,9 +20,12 @@ Natural German technical register for German-audience artifacts — not English-
 2. **Self-review each sentence** against `references/anti-patterns.md` — verbs, collocations, idioms, Amtsdeutsch.
 3. **Apply the lexicon** — canonical verbs and loanword gender: `references/lexicon.md`.
 4. **Match register per artifact** — impersonal for Jira/wiki, ich/du for chat: `references/register.md`.
-5. **Typography & rhythm** — Gedankenstrich, Durchkopplung; every fact once, varied sentence shapes: `references/typografie-rhythmus.md`.
-6. **No editorializing** — say what changed, not how good the work is: `references/no-editorializing.md`.
-7. **If unsure, ask — don't guess.**
+5. **Typography & rhythm** — Gedankenstrich, Durchkopplung; each mechanism explained once, varied sentence shapes: `references/typografie-rhythmus.md`.
+6. **Verständlichkeit** — unambiguous references, conditions kept while shortening, structure over word count: `references/cognitive-accessibility.md`.
+7. **No editorializing** — say what changed, not how good the work is: `references/no-editorializing.md`.
+8. **Decide ordinary style questions yourself; never invent a fact.** Ask only where an ambiguity changes the technical statement and the context cannot resolve it.
+
+**Priority when rules collide:** Fachliche Richtigkeit und eindeutiges Verständnis haben Vorrang vor Kürze, stilistischer Abwechslung und dem Ziel, weniger maschinell zu klingen.
 
 ## Top anti-patterns
 
@@ -44,7 +47,7 @@ Over-applying one drives you into another:
 
 1. **Anglicism** (verb-level): English where German is canonical. *Test failt* → *schlägt fehl*. Targeted by the table above and `anti-patterns.md`.
 2. **Calque** (nouns, collocations, idioms): word-by-word translation where the loanword or another German structure is canonical. *Wurzelursache* → *Root Cause*; *blockiert auf X* → *wartet auf X*; *macht Sinn* → *ist sinnvoll*. See `anti-patterns.md` and `lexicon.md`.
-3. **Amtsdeutsch over-polish**: fleeing both traps into stiff officialese and AI-symmetric structure — *Datenbestand*, *Es handelt sich um*, passive chains, facts restated per section. See `anti-patterns.md` and `typografie-rhythmus.md`. Idiomatic dev speech (*ins Gehege kommen*, *läuft voll*, *fliegt auf*) is wanted, not a violation.
+3. **Amtsdeutsch over-polish**: fleeing both traps into stiff officialese and AI-symmetric structure — *Datenbestand*, *Es handelt sich um*, passive chains, facts restated per section. See `anti-patterns.md` and `typografie-rhythmus.md`. Idiomatic dev speech (*ins Gehege kommen*, *läuft voll*, *fliegt auf*) is wanted, not a violation — except where the idiom replaces the mechanism the sentence is explaining (`cognitive-accessibility.md`).
 
 Noun rule: if a native German developer would *say* the term verbatim in a review or stand-up, keep it English — a German form that sounds like a textbook title is a calque.
 

@@ -22,7 +22,8 @@ This is an **Agent Skill** following the [open standard](https://agentskills.io)
 - **Technical lexicon**: preferred German forms with gender for Exceptions, Tests, Git, CI/CD, HTTP, Frontend, Data, and Architecture domains
 - **Register enforcement**: Präsens-Indikativ default, impersonal voice, no first-person in artifacts, sentence-length and compound-noun rules
 - **Artifact-specific conventions**: Jira ticket descriptions, Jira comments, internal German wiki/spec pages
-- **Worked examples**: 6 paired bad-vs-good cases with annotations
+- **Comprehension over brevity**: unambiguous references instead of *siehe oben*, conditions and exceptions kept while shortening, sentence structure checked rather than words counted
+- **Worked examples**: 8 paired bad-vs-good cases with annotations
 
 ## Installation
 
@@ -112,12 +113,15 @@ The skill does **not** trigger for commit messages, MR/PR descriptions, release 
 skills/german-technical-writing/
 ├── SKILL.md              # Trigger description, process, top-anti-pattern table
 ├── references/
-│   ├── anti-patterns.md  # ~60 false-friends catalogue with explanations
-│   ├── lexicon.md        # Technical term lexicon with gender
-│   ├── register.md       # Tense/voice/person, artifact conventions
-│   └── examples.md       # 6 paired real-world cases with annotations
+│   ├── anti-patterns.md            # ~60 false-friends catalogue with explanations
+│   ├── lexicon.md                  # Technical term lexicon with gender
+│   ├── register.md                 # Tense/voice/person, artifact conventions
+│   ├── typografie-rhythmus.md      # Typography and the AI-rhythm tells
+│   ├── cognitive-accessibility.md  # Comprehension priority over brevity
+│   ├── no-editorializing.md        # Inform, don't sell
+│   └── examples.md                 # 8 paired real-world cases with annotations
 └── evals/
-    └── evals.json        # 15 trigger-eval queries with assertions
+    └── evals.json                  # 27 evals; newer entries carry self-check samples
 ```
 
 ## Contributing
