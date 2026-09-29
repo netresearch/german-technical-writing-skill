@@ -18,6 +18,7 @@ Natural German technical register for Jira comments, internal German docs, and t
 │   │   └── examples.md                     # 8 paired bad-vs-good cases
 │   └── evals/evals.json                    # 27 evals; newer entries carry self-check samples
 ├── .github/workflows/                      # CI: lint, security, release, eval-validate, harness-verify, auto-merge-deps
+├── docs/SECURITY-ASSURANCE.md              # Security assurance case
 ├── composer.json                           # type: ai-agent-skill
 ├── LICENSE-MIT, LICENSE-CC-BY-SA-4.0       # Dual license: code (MIT), prose (CC-BY-SA-4.0)
 └── README.md                               # Installation + features

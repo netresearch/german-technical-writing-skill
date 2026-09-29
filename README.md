@@ -177,6 +177,8 @@ This repository follows the Netresearch organisation policies:
 
 Checks that run on pull requests here: Skill Validation (`lint.yml`) and Eval Validation (`eval-validate.yml`) on every pull request; for pull requests to `main` also Betterleaks secret scanning, zizmor workflow analysis, dependency review, Composer Audit with an Opengrep static-analysis scan (all `security.yml`), Harness Verification (`harness-verify.yml`) and Template Drift (`check-template-drift.yml`).
 
+The security assurance case (requirements, trust boundaries, threats and countermeasures, limits) is in [docs/SECURITY-ASSURANCE.md](docs/SECURITY-ASSURANCE.md).
+
 ## License
 
 - **Code** (`composer.json`, `plugin.json`, configs): [MIT](LICENSE-MIT)
