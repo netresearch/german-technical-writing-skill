@@ -161,7 +161,7 @@ bash /tmp/skill-repo-skill/skills/skill-repo/scripts/validate-skill.sh .
 bash /tmp/skill-repo-skill/skills/skill-repo/scripts/validate-evals.sh skills/german-technical-writing/evals/evals.json
 ```
 
-`validate-evals.sh` prints one `PASS:`, `WARN:` or `FAIL:` line per check (plus `INFO:` context lines) and ends with `Results: N passed, N failed, N warnings`; it exits non-zero when any line is `FAIL:`. A `FAIL:` naming a sample means one of three things: an assertion does not accept the passing answer, a failing sample satisfies every assertion (the assertions are too permissive), or a sample is empty. `validate-skill.sh` prints `ERROR:`, `WARNING:` and `OK:` lines, ends with an `Errors:` and a `Warnings:` count, and exits non-zero on errors only.
+`validate-evals.sh` prints one `PASS:`, `WARN:` or `FAIL:` line per check (plus `INFO:` context lines) and ends with `Results: N passed, N failed, N warnings`; it exits non-zero when any line is `FAIL:`. A `FAIL:` naming a sample points at the sample or the assertions, for example: an assertion does not accept the passing answer, a failing sample satisfies every assertion (the assertions are too permissive), or a sample is empty or malformed. `validate-skill.sh` prints `ERROR:`, `WARNING:` and `OK:` lines, ends with an `Errors:` and a `Warnings:` count, and exits non-zero on errors only.
 
 A new eval, or an eval whose assertions change, needs `samples.passing`: in pull requests the validator compares against the copy on `main` and fails such an eval without it, unless none of its assertions has a pattern the validator can run. Add `samples.failing` answers as well; the validator checks them when they are present. See [AGENTS.md](AGENTS.md) for what each kind of contribution must contain.
 
