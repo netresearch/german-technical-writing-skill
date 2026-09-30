@@ -146,7 +146,7 @@ The repository ships no executable code: the skill is Markdown prose plus `evals
 | `validate-skill.sh` | SKILL.md front matter and description, layout of the reference files, README sections and install targets | `lint.yml` (Skill Validation) |
 | markdownlint, yamllint, actionlint, JSON syntax, version parity | File syntax; the version in `plugin.json`, `.claude-plugin/plugin.json` and SKILL.md `metadata.version` agrees | `lint.yml` (Skill Validation) |
 | `validate-evals.sh` | Structure of every eval in `evals/evals.json`; for evals that carry `samples`, each assertion is run against `samples.passing` (must be accepted) and `samples.failing` (each failing sample must be rejected by at least one assertion) | `eval-validate.yml` (Eval Validation) |
-| AGENTS.md checks | AGENTS.md exists, stays under 150 lines, and every relative link in it points to an existing file (external links are not checked) | `harness-verify.yml` (Harness Verification) |
+| AGENTS.md checks | AGENTS.md exists, has at most 150 lines, and every relative link in it points to an existing file (external links are not checked) | `harness-verify.yml` (Harness Verification) |
 
 All four run on pull requests; Harness Verification runs only for pull requests to `main`. The validators come from [netresearch/skill-repo-skill](https://github.com/netresearch/skill-repo-skill) at `main`.
 
@@ -161,7 +161,7 @@ bash /tmp/skill-repo-skill/skills/skill-repo/scripts/validate-skill.sh .
 bash /tmp/skill-repo-skill/skills/skill-repo/scripts/validate-evals.sh skills/german-technical-writing/evals/evals.json
 ```
 
-`validate-evals.sh` prints one `PASS:`, `WARN:` or `FAIL:` line per check (plus `INFO:` context lines) and ends with `Results: N passed, N failed, N warnings`; it exits non-zero when any line is `FAIL:`. A `FAIL:` naming a sample means the assertion regex is inverted or does not match the answer it should accept. `validate-skill.sh` prints `ERROR:`, `WARNING:` and `OK:` lines, ends with an `Errors:` and a `Warnings:` count, and exits non-zero on errors only.
+`validate-evals.sh` prints one `PASS:`, `WARN:` or `FAIL:` line per check (plus `INFO:` context lines) and ends with `Results: N passed, N failed, N warnings`; it exits non-zero when any line is `FAIL:`. A `FAIL:` naming a sample means one of three things: an assertion does not accept the passing answer, a failing sample satisfies every assertion (the assertions are too permissive), or a sample is empty. `validate-skill.sh` prints `ERROR:`, `WARNING:` and `OK:` lines, ends with an `Errors:` and a `Warnings:` count, and exits non-zero on errors only.
 
 A new eval, or an eval whose assertions change, needs `samples.passing`: in pull requests the validator compares against the copy on `main` and fails such an eval without it, unless none of its assertions has a pattern the validator can run. Add `samples.failing` answers as well; the validator checks them when they are present. See [AGENTS.md](AGENTS.md) for what each kind of contribution must contain.
 
