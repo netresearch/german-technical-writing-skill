@@ -137,6 +137,48 @@ When proposing new anti-pattern entries or lexicon additions, please include:
 
 See `skills/german-technical-writing/references/examples.md` for the style of explanation we expect.
 
+### Tests and checks
+
+The repository ships no executable code: the skill is Markdown prose plus `evals/evals.json`, and `SKILL.md` requests only the `Read` tool. What runs on a change are validators, not a behavioural test suite.
+
+| Check | What it verifies | CI workflow |
+|-------|------------------|-------------|
+| `validate-skill.sh` | SKILL.md front matter and description, layout of the reference files, README sections and install targets | `lint.yml` (Skill Validation) |
+| markdownlint, yamllint, actionlint, JSON syntax, version parity | File syntax; the version in `plugin.json`, `.claude-plugin/plugin.json` and SKILL.md `metadata.version` agrees | `lint.yml` (Skill Validation) |
+| `validate-evals.sh` | Structure of every eval in `evals/evals.json`; for evals that carry `samples`, each assertion is run against `samples.passing` (must be accepted) and `samples.failing` (each failing sample must be rejected by at least one assertion) | `eval-validate.yml` (Eval Validation) |
+| AGENTS.md checks | AGENTS.md exists, has at most 150 lines, and every relative link in it points to an existing file (external links are not checked) | `harness-verify.yml` (Harness Verification) |
+
+All four run on pull requests; Harness Verification runs only for pull requests to `main`. The validators come from [netresearch/skill-repo-skill](https://github.com/netresearch/skill-repo-skill) at `main`.
+
+Run them locally:
+
+```bash
+pre-commit install --install-hooks   # once; most Skill Validation checks, markdownlint on every *.md (CI: root files only)
+pre-commit run --all-files
+
+git clone https://github.com/netresearch/skill-repo-skill.git /tmp/skill-repo-skill
+bash /tmp/skill-repo-skill/skills/skill-repo/scripts/validate-skill.sh .
+bash /tmp/skill-repo-skill/skills/skill-repo/scripts/validate-evals.sh skills/german-technical-writing/evals/evals.json
+```
+
+`validate-evals.sh` prints one `PASS:`, `WARN:` or `FAIL:` line per check (plus `INFO:` context lines) and ends with `Results: N passed, N failed, N warnings`; it exits non-zero when any line is `FAIL:`. A `FAIL:` naming a sample points at the sample or the assertions, for example: an assertion does not accept the passing answer, a failing sample satisfies every assertion (the assertions are too permissive), or a sample is empty or malformed. `validate-skill.sh` prints `ERROR:`, `WARNING:` and `OK:` lines, ends with an `Errors:` and a `Warnings:` count, and exits non-zero on errors only.
+
+A new eval, or an eval whose assertions change, needs `samples.passing`: in pull requests the validator compares against the copy on `main` and fails such an eval without it, unless none of its assertions has a pattern the validator can run. Add `samples.failing` answers as well; the validator checks them when they are present. See [AGENTS.md](AGENTS.md) for what each kind of contribution must contain.
+
+## Governance and policies
+
+This repository follows the Netresearch organisation policies:
+
+- [Governance](https://github.com/netresearch/.github/blob/main/GOVERNANCE.md): who owns and maintains the project, the roles, how decisions and disputes are settled.
+- [Roadmap](https://github.com/netresearch/.github/blob/main/ROADMAP.md): planned and excluded work for the coming year.
+- [Handling of dependency and code analysis findings](https://github.com/netresearch/.github/blob/main/SECURITY.md#handling-of-dependency-and-code-analysis-findings): thresholds, deadlines and exceptions for dependency and static-analysis findings.
+- [Secret management](https://github.com/netresearch/.github/blob/main/SECURITY.md#secret-management): how CI and release credentials are stored, accessed and rotated.
+- [Access roster](https://github.com/netresearch/.github/blob/main/docs/access-roster.md): the people and teams with admin, maintain and write access to this repository.
+
+Checks that run on pull requests here: Skill Validation (`lint.yml`) and Eval Validation (`eval-validate.yml`) on every pull request; for pull requests to `main` also Betterleaks secret scanning, zizmor workflow analysis, dependency review, Composer Audit with an Opengrep static-analysis scan (all `security.yml`), Harness Verification (`harness-verify.yml`) and Template Drift (`check-template-drift.yml`).
+
+The security assurance case (requirements, trust boundaries, threats and countermeasures, limits) is in [docs/SECURITY-ASSURANCE.md](docs/SECURITY-ASSURANCE.md).
+
 ## License
 
 - **Code** (`composer.json`, `plugin.json`, configs): [MIT](LICENSE-MIT)
