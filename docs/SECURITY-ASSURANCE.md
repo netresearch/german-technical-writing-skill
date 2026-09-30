@@ -23,7 +23,7 @@ The skill contains no program, script or hook; the only executable line in the r
 | Boundary | Trusted side | Untrusted or less-trusted side |
 |----------|--------------|--------------------------------|
 | Contribution | Maintainers listed in the organisation access roster | Pull requests from any GitHub user |
-| CI | Workflow definitions on `main` and the reusable workflows they call | Pull-request content checked by those workflows |
+| CI | The reusable workflows the callers use, pinned to `main` of netresearch/.github, netresearch/skill-repo-skill and netresearch/typo3-ci-workflows; the `pull_request_target` workflows (`labeler.yml`, `auto-merge-deps.yml`), which run as defined on `main` | Pull-request content, including the pull request's own copy of the calling workflow files, which GitHub runs for `pull_request` events (with a read-only token for pull requests from forks) |
 | Distribution | This repository, its signed release tags and release assets | Mirrors, forks, and channels that fetch from this repository (marketplace, Packagist, npm `github:` installs, skills.sh) |
 | Use | The user who installs and invokes the skill | The text the user asks the agent to write or rewrite |
 
