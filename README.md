@@ -145,8 +145,8 @@ The repository ships no executable code: the skill is Markdown prose plus `evals
 |-------|------------------|-------------|
 | `validate-skill.sh` | SKILL.md front matter and description, layout of the reference files, README sections and install targets | `lint.yml` (Skill Validation) |
 | markdownlint, yamllint, actionlint, JSON syntax, version parity | File syntax; the version in `plugin.json`, `.claude-plugin/plugin.json` and SKILL.md `metadata.version` agrees | `lint.yml` (Skill Validation) |
-| `validate-evals.sh` | Structure of every eval in `evals/evals.json`; for evals that carry `samples`, each assertion is run against `samples.passing` (must be accepted) and `samples.failing` (at least one must be rejected) | `eval-validate.yml` (Eval Validation) |
-| AGENTS.md checks | AGENTS.md exists, stays under 150 lines, and has no dead links | `harness-verify.yml` (Harness Verification) |
+| `validate-evals.sh` | Structure of every eval in `evals/evals.json`; for evals that carry `samples`, each assertion is run against `samples.passing` (must be accepted) and `samples.failing` (each failing sample must be rejected by at least one assertion) | `eval-validate.yml` (Eval Validation) |
+| AGENTS.md checks | AGENTS.md exists, stays under 150 lines, and every relative link in it points to an existing file (external links are not checked) | `harness-verify.yml` (Harness Verification) |
 
 All four run on pull requests; Harness Verification runs only for pull requests to `main`. The validators come from [netresearch/skill-repo-skill](https://github.com/netresearch/skill-repo-skill) at `main`.
 
