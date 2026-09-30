@@ -153,7 +153,7 @@ All four run on pull requests; Harness Verification runs only for pull requests 
 Run them locally:
 
 ```bash
-pre-commit install --install-hooks   # once; the hooks mirror the lint checks
+pre-commit install --install-hooks   # once; most Skill Validation checks, markdownlint on every *.md (CI: root files only)
 pre-commit run --all-files
 
 git clone https://github.com/netresearch/skill-repo-skill.git /tmp/skill-repo-skill
@@ -163,7 +163,7 @@ bash /tmp/skill-repo-skill/skills/skill-repo/scripts/validate-evals.sh skills/ge
 
 `validate-evals.sh` prints one `PASS:`, `WARN:` or `FAIL:` line per check (plus `INFO:` context lines) and ends with `Results: N passed, N failed, N warnings`; it exits non-zero when any line is `FAIL:`. A `FAIL:` naming a sample means the assertion regex is inverted or does not match the answer it should accept. `validate-skill.sh` prints `ERROR:`, `WARNING:` and `OK:` lines, ends with an `Errors:` and a `Warnings:` count, and exits non-zero on errors only.
 
-A new eval, or an eval whose assertions change, needs `samples` (a `passing` answer and `failing` answers): in pull requests the validator compares against the copy on `main` and fails an eval that lacks them. See [AGENTS.md](AGENTS.md) for what each kind of contribution must contain.
+A new eval, or an eval whose assertions change, needs `samples.passing`: in pull requests the validator compares against the copy on `main` and fails such an eval without it, unless none of its assertions has a pattern the validator can run. Add `samples.failing` answers as well; the validator checks them when they are present. See [AGENTS.md](AGENTS.md) for what each kind of contribution must contain.
 
 ## Governance and policies
 
