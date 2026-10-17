@@ -121,7 +121,7 @@ skills/german-technical-writing/
 │   ├── no-editorializing.md        # Inform, don't sell
 │   └── examples.md                 # 8 paired cases with annotations (Case 8 synthetic)
 └── evals/
-    └── evals.json                  # 27 evals; newer entries carry self-check samples
+    └── evals.json                  # 29 evals; newer entries carry self-check samples
 ```
 
 ## Contributing

@@ -16,7 +16,7 @@ Natural German technical register for Jira comments, internal German docs, and t
 │   │   ├── cognitive-accessibility.md      # Comprehension priority over brevity
 │   │   ├── no-editorializing.md            # Inform, don't sell
 │   │   └── examples.md                     # 8 paired bad-vs-good cases
-│   └── evals/evals.json                    # 27 evals; newer entries carry self-check samples
+│   └── evals/evals.json                    # 29 evals; newer entries carry self-check samples
 ├── .github/workflows/                      # CI: lint, security, release, eval-validate, harness-verify, auto-merge-deps
 ├── docs/SECURITY-ASSURANCE.md              # Security assurance case
 ├── composer.json                           # type: ai-agent-skill

@@ -439,6 +439,50 @@
           "Da ist ein Timing-Problem, deshalb der falsche Preis."
         ]
       }
+    },
+    {
+      "id": 28,
+      "prompt": "fass für die confluence-seite 'shop-erweiterungen' die drei erweiterungen in einem absatz zusammen: kundenpreise über rabattgruppen, lieferzeit live aus dem ERP im warenkorb, musterbestellung ohne preis",
+      "expected_output": "One paragraph that names the three extensions with what each does. It ends with the last fact; no closing sentence that says what the examples show, no row of verdict fragments.",
+      "expectations": [
+        "Names all three extensions with what each one does (Rabattgruppen, Lieferzeit aus dem ERP, Musterbestellung)",
+        "No verdict sentence after the list that names what the examples show (e.g. 'Die Erweiterungen zeigen, wie flexibel …')",
+        "Does not open three sentences in a row with the same word"
+      ],
+      "assertions": [
+        {"type": "content", "pattern": "Rabattgruppe"},
+        {"type": "content", "pattern": "ERP"},
+        {"type": "must_not", "pattern": "(zeig|verdeutlich|unterstreich)(t|en),? wie"}
+      ],
+      "samples": {
+        "passing": "Drei Erweiterungen laufen im Shop: Kundenpreise kommen aus Rabattgruppen, der Warenkorb liest die Lieferzeit live aus dem ERP, und Musterbestellungen gehen ohne Preis durch.",
+        "failing": [
+          "Kundenpreise kommen aus Rabattgruppen, die Lieferzeit live aus dem ERP. Die Erweiterungen zeigen, wie flexibel der Shop ist.",
+          "Rabattgruppen steuern die Preise, das ERP liefert die Lieferzeit. Das zeigt, wie offen das System ist."
+        ]
+      }
+    },
+    {
+      "id": 29,
+      "prompt": "einleitung für die wiki-seite 'audit-status': jede seite hat einen status (entwurf, geprüft, freigegeben). lizenzthemen gehören nicht zum audit",
+      "expected_output": "Two plain statements: the statuses with 'hat', and the out-of-scope topic as a fact. No 'trägt einen Status', no 'Bewusst ausgeklammert'.",
+      "expectations": [
+        "States that each page has one of the three statuses, using the plain verb (hat) rather than a metaphor such as trägt",
+        "States the excluded topic (Lizenzthemen) as a fact, without defending the exclusion with 'bewusst'"
+      ],
+      "assertions": [
+        {"type": "content", "pattern": "Status"},
+        {"type": "content", "pattern": "Lizenz"},
+        {"type": "must_not", "pattern": "bewusst"},
+        {"type": "must_not", "pattern": "tr(ä|ae)gt [a-z]+ Status"}
+      ],
+      "samples": {
+        "passing": "Jede Seite hat einen Status: Entwurf, geprüft oder freigegeben. Lizenzthemen sind nicht Teil des Audits.",
+        "failing": [
+          "Jede Seite trägt einen Status: Entwurf, geprüft oder freigegeben. Lizenzthemen sind nicht Teil des Audits.",
+          "Jede Seite hat einen Status. Bewusst ausgeklammert: Lizenzthemen."
+        ]
+      }
     }
   ]
 }

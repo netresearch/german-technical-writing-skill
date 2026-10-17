@@ -279,6 +279,8 @@ The third failure mode: avoiding anglicisms so hard that the text lands in burea
 | Die Prüfung erfolgt durch X / X wird einer Prüfung unterzogen | X prüft | Funktionsverbgefüge — use the verb. Same for *zur Anwendung bringen* → *anwenden*, *zum Einsatz kommen* → *einsetzen*, *eine Durchführung erfolgt* → any active verb. |
 | partiell / obsolet (as filler formality) | teilweise / veraltet | plain word over formal word when both fit. |
 | Unterstützung bieten | unterstützen / helfen | |
+| Jede Seite trägt einen Status / der Kasten trägt die Ampel | Jede Seite hat einen Status / im Kasten steht die Ampel | *tragen* standing in for *haben*: a metaphor where the plain verb says it. Keep it where something carries a load or a responsibility (*die Verantwortung tragen*). |
+| X stellt die Schnittstelle dar / X dient als Schnittstelle | X ist die Schnittstelle | a longer verb where *ist* says it. |
 
 Deliberately idiomatic dev speech is *welcome*, not a violation: *sich ins Gehege kommen*, *der Speicher läuft voll*, *das fliegt in den Unit-Tests auf*, *läuft eh knapp am Limit*, *den Cache wegziehen*. Sterilizing these into formal German makes text read more machine-written, not less.
 

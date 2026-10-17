@@ -22,7 +22,7 @@ Apply three tests before a sentence stays:
 3. **Voice** — would a terse maintainer write this, or does it read like a
    cover letter?
 
-Two recurring failure modes:
+Three recurring failure modes:
 
 - **Announcing the expected.** Passing tests, clean linters, "documented", "no
   regressions", "works as expected" are the baseline — do not narrate them.
@@ -37,6 +37,14 @@ Two recurring failure modes:
   "I made sure to…", "thoroughly tested"). These describe the author, not the
   change. Show the fact; drop the framing. (The words are only symptoms — judge
   by the three tests above, not by the word.)
+
+- **Defending a choice nobody questioned.** German drafts open sentences with
+  *bewusst* (*„Bewusst generisch gehalten, ohne Bezug auf ein konkretes
+  System.“*, *„Bewusst ausgeklammert: Lizenzthemen.“*). The word answers an
+  objection no reader raised and grades the author's care. State the scope as
+  a fact (*„Ohne Bezug auf ein konkretes System.“*, *„Nicht Teil des Audits:
+  Lizenzthemen.“*). Keep *bewusst* only where a reader would otherwise take the
+  gap for an oversight, and then give the reason.
 
 Use plain labels, not graded ones: "Breaking change", "Tests", "Limitations" —
 not "Tests (all green)" or "Breaking change (honest)". If a limitation's cause

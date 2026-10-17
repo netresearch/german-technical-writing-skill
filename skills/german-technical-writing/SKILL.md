@@ -20,7 +20,7 @@ Natural German technical register for German-audience artifacts — not English-
 2. **Self-review each sentence** against `references/anti-patterns.md` — verbs, collocations, idioms, Amtsdeutsch.
 3. **Apply the lexicon** — canonical verbs and loanword gender: `references/lexicon.md`.
 4. **Match register per artifact** — impersonal for Jira/wiki, ich/du for chat: `references/register.md`.
-5. **Typography & rhythm** — Gedankenstrich, Durchkopplung; each mechanism explained once, varied sentence shapes: `references/typografie-rhythmus.md`.
+5. **Typography & rhythm** — Gedankenstrich, Durchkopplung; each mechanism explained once, varied sentence shapes and openings, no verdict sentence after an example: `references/typografie-rhythmus.md`.
 6. **Verständlichkeit** — unambiguous references, conditions kept while shortening, structure over word count: `references/cognitive-accessibility.md`.
 7. **No editorializing** — say what changed, not how good the work is: `references/no-editorializing.md`.
 8. **Decide ordinary style questions yourself; never invent a fact.** Ask only where an ambiguity changes the technical statement and the context cannot resolve it.
