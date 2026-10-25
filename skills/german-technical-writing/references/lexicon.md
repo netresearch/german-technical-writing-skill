@@ -105,6 +105,7 @@ Table of technical terms with gender, preferred form, and usage notes. Use this 
 | query param | der Query-Parameter | accepted | |
 | status code | der Statuscode | native | |
 | timeout | das Timeout / der Timeout | accepted | gender unstable; *das* more common. |
+| deadline | die Deadline / die Frist | both | feminine, also inside a class name: *eine McpOperationDeadline … reicht sie weiter*, never *es*. |
 | retry | der Retry / der erneute Versuch | both | |
 | rate limit | das Rate Limit / die Drosselung | accepted | |
 
@@ -194,7 +195,7 @@ Table of technical terms with gender, preferred form, and usage notes. Use this 
 These get mistakes most often. Fix the article first:
 
 - **der** Commit, **der** Rebase, **der** Merge, **der** Branch, **der** Build, **der** Bug, **der** Fix, **der** Patch, **der** Hook, **der** Mock, **der** Stub, **der** Wrapper, **der** Decorator, **der** Provider, **der** Service, **der** Controller, **der** Header, **der** Callback, **der** Listener, **der** State, **der** Request, **der** Merge Request, **der** Endpoint, **der** Cache, **der** Index, **der** Retry, **der** Apply, **der** Apply-Job, **der** Stack-Frame
-- **die** Pipeline, **die** Exception, **die** Assertion, **die** Response, **die** Session, **die** Migration, **die** Query, **die** Prop, **die** Factory, **die** Komponente, **die** Schnittstelle, **die** Callsite, **die** Baseline
+- **die** Pipeline, **die** Exception, **die** Assertion, **die** Response, **die** Session, **die** Migration, **die** Query, **die** Prop, **die** Factory, **die** Komponente, **die** Schnittstelle, **die** Callsite, **die** Baseline, **die** Deadline
 - **das** Interface, **das** Feature, **das** Event, **das** Ticket, **das** Issue, **das** Template, **das** Deployment, **das** Staging, **das** Logging, **das** Monitoring, **das** Framework, **das** Caching, **das** Routing, **das** Rendering, **das** Refactoring, **das** Repository, **das** Schema
 - Genuinely unstable — both attested, pick one and stay consistent within a text: **der/das** Timeout, **der/das** Token, **der/das** Deadlock, **der/das** Deploy, **die/das** Payload, **die/das** Fixture, **der/das** Breaking Change
 
